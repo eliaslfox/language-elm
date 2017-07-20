@@ -1,0 +1,315 @@
+
+==================== FINAL INTERFACE ====================
+2017-07-09 00:50:48.435522 UTC
+
+interface language-elm-0.1.0.0-LoDDWDjv62NLP5L4M207ke:Lib 8002
+  interface hash: 99392c312d74df9941cf7ec5d962b1f1
+  ABI hash: f13cadcc9026651eaa6a4b6cfb277a0e
+  export-list hash: 3d3275e178fdf544e4e327669d1dc033
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f6624f22fcdd76ed0ac6625466e2d712
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.toDoc
+  Lib.var
+  Lib.vop
+  Lib.Expr{Lib.App Lib.BoolFalse Lib.BoolTrue Lib.Case Lib.Int Lib.Let Lib.List Lib.Op Lib.Parens Lib.Str Lib.Tuple2 Lib.Under}
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 pretty-1.1.3.3@pretty-1.1.3.3
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint abe8aeb00d775221281f89090d9fbe2a
+import  -/  pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ 0c3d66734497c26d70ab123829dd1cb4
+61f334ff51955082226040498f337890
+  $tc'App :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12706239161595196241##
+                   9192896907299761145##
+                   Lib.$trModule
+                   Lib.$tc'App1) -}
+587aaf8671e40cefcd09ee5eecedbc91
+  $tc'App1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'App"#) -}
+d0179aaf6f29d157a0cfde51e0a9d1e7
+  $tc'BoolFalse :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15817169445366619078##
+                   10111125071228315520##
+                   Lib.$trModule
+                   Lib.$tc'BoolFalse1) -}
+060aec1d7d32ed27966d36800342501a
+  $tc'BoolFalse1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'BoolFalse"#) -}
+8b529d78dbf6ea93c38bcccb7019e1c9
+  $tc'BoolTrue :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10951059377640015672##
+                   5258607014620950006##
+                   Lib.$trModule
+                   Lib.$tc'BoolTrue1) -}
+3acc2c24a5e883f210a500e00b532b2f
+  $tc'BoolTrue1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'BoolTrue"#) -}
+4d31f7c58954a274c59366247c28a5e0
+  $tc'Case :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2777503019788634973##
+                   9699827241757473430##
+                   Lib.$trModule
+                   Lib.$tc'Case1) -}
+28a08c31fb140d5081649679513f9064
+  $tc'Case1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Case"#) -}
+e02197bbb68c0bdc418594f80dcf1631
+  $tc'Int :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13414257177286173071##
+                   17094273179559287769##
+                   Lib.$trModule
+                   Lib.$tc'Int1) -}
+0d3f82fb8723d022356a07e7ae1b9dcc
+  $tc'Int1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Int"#) -}
+a70d3dc29e6420b2897d378c8b591532
+  $tc'Let :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7882924546450945328##
+                   9703723855914193830##
+                   Lib.$trModule
+                   Lib.$tc'Let1) -}
+a1d5ba62d39ba2e5127f04c02c7193a4
+  $tc'Let1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Let"#) -}
+48e02d3f3c634d42685238a16d9a8e7b
+  $tc'List :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7633370462565585954##
+                   11245388919235102377##
+                   Lib.$trModule
+                   Lib.$tc'List1) -}
+cf83ec2e0759a99231c1c1693c1aa08a
+  $tc'List1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'List"#) -}
+6226b8ac2d68fb8fec120af9f5edab35
+  $tc'Op :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5335601396102244774##
+                   13024334985666035798##
+                   Lib.$trModule
+                   Lib.$tc'Op1) -}
+7abf511615d1e43dcf7ddbe24e999e5d
+  $tc'Op1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Op"#) -}
+db3966fca4992fa946ca00b978a032d2
+  $tc'Parens :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17403307646711799520##
+                   8015713237018775329##
+                   Lib.$trModule
+                   Lib.$tc'Parens1) -}
+3088d25851ceaa3558c01e638eb780e1
+  $tc'Parens1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Parens"#) -}
+0436d8874082e6a282c53a5f043d6948
+  $tc'Str :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8098680875696952799##
+                   13376785465255536055##
+                   Lib.$trModule
+                   Lib.$tc'Str1) -}
+eb5a2bb601ad2cdaa2dad3638f9bc961
+  $tc'Str1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Str"#) -}
+5fee1bfea9b411c6cf1abf44920bf3d0
+  $tc'Tuple1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Tuple2"#) -}
+d9bcc3213c17794ef46dfd994131008f
+  $tc'Tuple2 :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   643437722385699667##
+                   12540604605686340528##
+                   Lib.$trModule
+                   Lib.$tc'Tuple1) -}
+635a785a8e6ae1686b46ca314b335db1
+  $tc'Under :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2156965045507940483##
+                   7084312736332682209##
+                   Lib.$trModule
+                   Lib.$tc'Under1) -}
+798a2ee948e95e7379aa6b2077bcc6ea
+  $tc'Under1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Under"#) -}
+d327189d9699938c94cdb23a4fb3087b
+  $tcExpr :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16597210475504565440##
+                   13128184706612338260##
+                   Lib.$trModule
+                   Lib.$tcExpr1) -}
+ec53c870c22852ec01dc5b60da124b90
+  $tcExpr1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Expr"#) -}
+edc5be058c386e9b85570198f5bd1243
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule2 Lib.$trModule1) -}
+d5dc970ef5439d3d0d1a8ffceced8966
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Lib"#) -}
+3d0966b874532fe4573529795e847138
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "language-elm-0.1.0.0-LoDDWDjv62NLP5L4M207ke"#) -}
+d9e43e66cfb2b8782790dc70e6a79ff4
+  data Expr
+    = App GHC.Base.String [Lib.Expr]
+    | Case Lib.Expr [(Lib.Expr, Lib.Expr)]
+    | Let Lib.Expr [(Lib.Expr, Lib.Expr)]
+    | List [Lib.Expr]
+    | Tuple2 Lib.Expr Lib.Expr
+    | Op GHC.Base.String Lib.Expr Lib.Expr
+    | Parens Lib.Expr
+    | Str GHC.Base.String
+    | Int GHC.Types.Int
+    | Under
+    | BoolTrue
+    | BoolFalse
+5b0324a3334db30c39b12f795b985ab6
+  toDoc :: Lib.Expr -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 1, Strictness: <S,1*U> -}
+209ccd42e9f882be24635cfa5db30528
+  var :: GHC.Base.String -> Lib.Expr
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m1,
+     Unfolding: InlineRule (1, True, False)
+                (\ (str :: GHC.Base.String) ->
+                 Lib.App str (GHC.Types.[] @ Lib.Expr)) -}
+8ed9993babae8d99d99115f23df73a7e
+  vop :: Lib.Expr -> Text.PrettyPrint.HughesPJ.Doc
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (expr :: Lib.Expr) ->
+                 case expr of wild {
+                   DEFAULT
+                   -> case (Lib.toDoc wild)
+                             `cast`
+                           (Text.PrettyPrint.HughesPJ.N:Doc[0]) of wild1 {
+                        DEFAULT
+                        -> (Text.PrettyPrint.Annotated.HughesPJ.Beside
+                              @ ()
+                              (Text.PrettyPrint.Annotated.HughesPJ.Beside
+                                 @ ()
+                                 Text.PrettyPrint.HughesPJ.lparen1
+                                 GHC.Types.False
+                                 wild1)
+                              GHC.Types.False
+                              Text.PrettyPrint.HughesPJ.parens1)
+                             `cast`
+                           (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0]))
+                        Text.PrettyPrint.Annotated.HughesPJ.Empty
+                        -> Lib.vop1 `cast` (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }
+                   Lib.App str ds
+                   -> case ds of wild1 {
+                        []
+                        -> (Text.PrettyPrint.Annotated.HughesPJ.text @ () str)
+                             `cast`
+                           (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0]))
+                        : ipv ipv1
+                        -> case (Lib.toDoc wild)
+                                  `cast`
+                                (Text.PrettyPrint.HughesPJ.N:Doc[0]) of wild2 {
+                             DEFAULT
+                             -> (Text.PrettyPrint.Annotated.HughesPJ.Beside
+                                   @ ()
+                                   (Text.PrettyPrint.Annotated.HughesPJ.Beside
+                                      @ ()
+                                      Text.PrettyPrint.HughesPJ.lparen1
+                                      GHC.Types.False
+                                      wild2)
+                                   GHC.Types.False
+                                   Text.PrettyPrint.HughesPJ.parens1)
+                                  `cast`
+                                (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0]))
+                             Text.PrettyPrint.Annotated.HughesPJ.Empty
+                             -> Lib.vop1 `cast` (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) } }
+                   Lib.Tuple2 exp1 exp2 -> Lib.toDoc wild
+                   Lib.Str str
+                   -> case GHC.List.$wlenAcc
+                             @ GHC.Types.Char
+                             str
+                             0# of ww2 { DEFAULT ->
+                      (Text.PrettyPrint.Annotated.HughesPJ.Beside
+                         @ ()
+                         (Text.PrettyPrint.Annotated.HughesPJ.Beside
+                            @ ()
+                            Text.PrettyPrint.HughesPJ.doubleQuotes1
+                            GHC.Types.False
+                            (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                               @ ()
+                               (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                                  @ ()
+                                  (Text.PrettyPrint.Annotated.HughesPJ.Str str)
+                                  ww2)
+                               (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ())))
+                         GHC.Types.False
+                         Text.PrettyPrint.HughesPJ.doubleQuotes1)
+                        `cast`
+                      (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) } }) -}
+177fbf1ecc9b74e30cb5db792cc9123a
+  vop1 :: Text.PrettyPrint.Annotated.HughesPJ.Doc ()
+  {- HasNoCafRefs,
+     Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Beside
+                   @ ()
+                   Text.PrettyPrint.HughesPJ.lparen1
+                   GHC.Types.False
+                   Text.PrettyPrint.HughesPJ.parens1) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

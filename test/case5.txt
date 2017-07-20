@@ -1,0 +1,11 @@
+case b of
+    True ->
+        let
+            _ = Debug.log "logging" "its true"
+        in
+            "true"
+    False ->
+        let
+            _ = Debug.log "logging" "its false"
+        in
+            "false"

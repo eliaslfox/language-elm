@@ -1,0 +1,5 @@
+let
+    a = 5
+    b = 6
+in
+    f a b

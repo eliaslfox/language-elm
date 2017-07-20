@@ -1,0 +1,3704 @@
+
+==================== FINAL INTERFACE ====================
+2017-07-20 02:43:49.903361 UTC
+
+interface main@main:Main 8002
+  interface hash: f3c42662c31b5e27999dba1b37fecb65
+  ABI hash: 0e707422cfb136f0836aa35798d29b72
+  export-list hash: 481f0971df88d1f9f94421fbec621734
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 33e452f338c02b2c48144d9926a8bbe5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+  Main.testApp
+  Main.testCase
+  Main.testDec
+  Main.testDecType
+  Main.testDecTypeAlias
+  Main.testLet
+  Main.testList
+  Main.testOp
+  Main.testRender
+  Main.testRenderDec
+  Main.testType
+  Main.tests
+module dependencies:
+package dependencies: HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      call-stack-0.1.0@call-stack-0.1.0-FYVrCPXGP9EGAuTW32963O
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      language-elm-0.1.0.0@language-elm-0.1.0.0-LoDDWDjv62NLP5L4M207ke
+                      pretty-1.1.3.3@pretty-1.1.3.3
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit 430ab81af3668b12bae4950025858f90
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit.Base cd997e8ff65c19ac22867304478c3a62
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit.Lang 9ab538688b5ed60ffdede50aabf29dd6
+import  -/  HUnit-1.5.0.0@HUnit-1.5.0.0-DvjF79OHhCC7SzfeEty4OI:Test.HUnit.Text dae9d5556dfb2f57d4dfe82107af90ee
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  language-elm-0.1.0.0@language-elm-0.1.0.0-LoDDWDjv62NLP5L4M207ke:Decleration 56ba179eb5d721337621e1bff473fc74
+import  -/  language-elm-0.1.0.0@language-elm-0.1.0.0-LoDDWDjv62NLP5L4M207ke:Expression dee347134d2f91ad904ea1079941fba0
+import  -/  language-elm-0.1.0.0@language-elm-0.1.0.0-LoDDWDjv62NLP5L4M207ke:Type 6e5440ecd8a87b6afd8860e356c0251c
+import  -/  pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint abe8aeb00d775221281f89090d9fbe2a
+import  -/  pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ 0c3d66734497c26d70ab123829dd1cb4
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+c1dba40665e191e01c29c5e73f025352
+  main :: GHC.Types.IO Test.HUnit.Base.Counts
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <Test.HUnit.Base.Counts>_R)) -}
+1aee623a8fa50fd47af793018b0d2ae3
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Test.HUnit.Base.Counts #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.HUnit.Text.runTestTT3 of ww { Test.HUnit.Text.PutText ww1 ww2 ->
+                 case Test.HUnit.Text.$wrunTestText
+                        @ GHC.Types.Int
+                        ww1
+                        ww2
+                        Main.tests
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild { (,) counts' ds ->
+                 case ds of wild1 { GHC.Types.I# ds2 ->
+                 case ds2 of ds3 {
+                   DEFAULT
+                   -> GHC.IO.failIO1
+                        @ Test.HUnit.Base.Counts
+                        Test.HUnit.Text.runTestTT2
+                        ipv
+                   0# -> (# ipv, counts' #) } } } } }) -}
+0679cc54e717b8774fc5999a3583777a
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Test.HUnit.Base.Counts #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ Test.HUnit.Base.Counts
+                   Main.main1
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <Test.HUnit.Base.Counts>_R))) -}
+a82bc6cf9b44676b95375c6894753891
+  testApp :: [Test.HUnit.Lang.Assertion]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Lang.Assertion
+                   Main.testApp33
+                   Main.testApp1) -}
+e0036defcb946d59a4b3577be8e00645
+  testApp1 :: [Test.HUnit.Lang.Assertion]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Lang.Assertion
+                   Main.testApp16 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testApp2) -}
+d74507aa7925e739a6b547a20a667746
+  testApp10 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testApp11
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+d33d44438d1388eab05ddea20a164848
+  testApp11 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testApp12
+                   GHC.Stack.Types.EmptyCallStack) -}
+683a8faf9bc53f4cc2512efb77ed6851
+  testApp12 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testApp15
+                   Main.testApp14
+                   Main.testApp15
+                   Main.testApp13) -}
+abc6af054544e70e74844017215a8b85
+  testApp13 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 91#) -}
+78eb9c0596804852bbc85a21dbadbd99
+  testApp14 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 13#) -}
+cf78505e47314ff3a8e82501edd61081
+  testApp15 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 22#) -}
+5c420e69163cf80b5fb94189cf52f979
+  testApp16 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (Main.testApp30 Main.testApp29 Main.testApp27 Main.testApp26)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (Main.testApp21 Main.testApp20 Main.testApp18 Main.testApp17)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv }) -}
+d5839fc0635bfe8470b9810bc0d1c6fe
+  testApp17 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testLet14) -}
+37b0b3a505003072b843fa125d5c9222
+  testApp18 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testApp_s1
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testApp19
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+39d5d73aa9bd17b2f10cd1f5133708c9
+  testApp19 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testApp_s1) -}
+46a1316c391f6568eb0140fca9f5b995
+  testApp2 :: [Test.HUnit.Lang.Assertion]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Lang.Assertion
+                   Main.testApp3
+                   (GHC.Types.[] @ Test.HUnit.Lang.Assertion)) -}
+0f2c38b400ab558944e45d2058472633
+  testApp20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "two vars"#) -}
+efc3eb78ab678f93ea3952304f29df66
+  testApp21 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testApp22
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+2ce648122396948d5d3184bcc6641dc9
+  testApp22 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testApp23
+                   GHC.Stack.Types.EmptyCallStack) -}
+7d2d0275182164086c88e29473f909cd
+  testApp23 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testApp25
+                   Main.testApp14
+                   Main.testApp25
+                   Main.testApp24) -}
+957772c71c1664e9450fa127385a9163
+  testApp24 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 93#) -}
+12f91b808b6ff0756cd090d91b88bb38
+  testApp25 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 20#) -}
+3e42d0126d1f79d519f091af26aa247f
+  testApp26 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testOp8) -}
+a098837d68a5033f9752c8f05ce3490c
+  testApp27 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testApp_s2
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testApp28
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+6c51d5d6168cdd3303fa20f38c379c6b
+  testApp28 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testApp_s2) -}
+818991e4a4f7a98cf8bb4bbf6d7cd436
+  testApp29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "single var"#) -}
+b11ef49635be3beb038b8c9bafb7faed
+  testApp3 :: Test.HUnit.Lang.Assertion
+  {- Unfolding: (Main.testApp10
+                   Main.testOp15
+                   Main.testApp8
+                   Main.testApp4) -}
+0e4478976ad111057086711fd3618d6f
+  testApp30 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testApp31
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+a4e1deb7b187e032888226bf565a7fe5
+  testApp31 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testApp32
+                   GHC.Stack.Types.EmptyCallStack) -}
+855751df0f21e072ebf2bf2b5f8ace2b
+  testApp32 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDecType15
+                   Main.testApp14
+                   Main.testDecType15
+                   Main.testType30) -}
+e88f290cadf533700677017fa23c25e5
+  testApp33 :: Test.HUnit.Lang.Assertion
+  {- Unfolding: (Main.testApp39
+                   Main.testApp38
+                   Main.testApp36
+                   Main.testApp34) -}
+6b9c209b0dbc3ea0af7a67ea04f6d8f8
+  testApp34 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testApp35) -}
+ad264390339dae95099acdbd54f331c6
+  testApp35 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testOp11
+                   (GHC.Types.[] @ Expression.Expr)) -}
+7b574179c766a4c8f64e41eb0564bc00
+  testApp36 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testOp11
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testApp37
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+edd02cb4f14bd176b84c7f5ae45838b7
+  testApp37 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testOp11) -}
+30a280254bea9bbaf6ac8cdd65c9b220
+  testApp38 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No arguments"#) -}
+284893fd5c7a6eb6f5f820ce3493bdb1
+  testApp39 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testApp40
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+fa0d60910f27bb8fe442171cb0fe61ae
+  testApp4 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testApp5) -}
+0050169b112bd5d0f4166ce7108af539
+  testApp40 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testApp41
+                   GHC.Stack.Types.EmptyCallStack) -}
+08d2bc766149fb8d1a16e39bf09d8746
+  testApp41 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testApp42
+                   Main.testApp14
+                   Main.testApp42
+                   Main.testOp19) -}
+a14df0369d9c86136e7f220c0b715644
+  testApp42 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 17#) -}
+ab64b88ab4394e67d1106827abd5d07d
+  testApp5 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testOp11 Main.testApp6) -}
+7918aa4c198535444a1de7b2c13a9af3
+  testApp6 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testApp7
+                   (GHC.Types.[] @ Expression.Expr)) -}
+41acb6bb3e6da5c01c24b66981e6e0d8
+  testApp7 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testDec29 Main.testOp5) -}
+df143844c46be4f752e519ee197a3d7a
+  testApp8 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testApp_s
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testApp9
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+d942a57d752a3c88a70a4fc77bce8305
+  testApp9 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testApp_s) -}
+3162f4d7be63044cf044accfcacc91ca
+  testApp_s :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "f (a b)"#) -}
+1d5ad93545b9ee883f94fc737ad1c57c
+  testApp_s1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "f a b"#) -}
+0cf42cc50aa38493c9b9c5cd2f4ea3b0
+  testApp_s2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "f a"#) -}
+833c199acbc00dde46bbdc07bd501286
+  testCase :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testCase90 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testCase1) -}
+1edffcd77e37eb241e89f9ff68e9121e
+  testCase1 :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testCase75 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testCase2) -}
+79c3f27604093e0dfca501c3a8385400
+  testCase10 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase11
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+ef22fa0cfbba6b26c18f106e175be912
+  testCase100 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDecType52
+                   (GHC.Types.[] @ Expression.Expr)) -}
+3aeace228c9722950340f59274b0f537
+  testCase101 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testCase104, Main.testCase102)) -}
+c3226805a138b9b5958607c3f15f4ed2
+  testCase102 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase103) -}
+911598be3a06eca33ec3daef34b5dbae
+  testCase103 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "blue"#) -}
+4a215d9437268e0500268d625c0872bf
+  testCase104 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDecType54
+                   (GHC.Types.[] @ Expression.Expr)) -}
+e31311a802159f14abdc980dccb17ae6
+  testCase105 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testCase108, Main.testCase106)) -}
+29851103396e4c189f350243dbd66f45
+  testCase106 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase107) -}
+399ba29396ed58d323f1417185fa2022
+  testCase107 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "red"#) -}
+1e97cea9c2f3c2ef328d0e6003c684ab
+  testCase108 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDecType56
+                   (GHC.Types.[] @ Expression.Expr)) -}
+7774b6f2f93d8124921fa0b72b4937e5
+  testCase109 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testCase110
+                   (GHC.Types.[] @ Expression.Expr)) -}
+314c9710065503668b59edc037ff2308
+  testCase11 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Expression.BoolFalse, Main.testCase12)) -}
+460ab52406d26feaaf710b6b8a8ed146
+  testCase110 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "color"#) -}
+7c5e870049ae38981af62699ae8e5017
+  testCase111 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "colors"#) -}
+ee246850e574791db8f7eda900e00368
+  testCase112 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testCase113
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+ba56896a0aac9b13a786cb9f616582c6
+  testCase113 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testCase114
+                   GHC.Stack.Types.EmptyCallStack) -}
+42387ffa36de2cb1ab85a1c1835ff5de
+  testCase114 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testCase116
+                   Main.testDec40
+                   Main.testCase116
+                   Main.testCase115) -}
+0895569f9e6cf0ffea17c8eb992e7602
+  testCase115 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 34#) -}
+ab07a9c320552b75af577d6d8dbe4136
+  testCase116 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 35#) -}
+0f334b5a8377dd11391b020a73e6914d
+  testCase117 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/case1.txt"#) -}
+8b83edba60cff1c67c11e46ebac1ad52
+  testCase12 :: Expression.Expr
+  {- Unfolding: (Expression.Let Main.testCase23 Main.testCase13) -}
+0fb484958eceb065239504f6301cd01d
+  testCase13 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase14
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+cff3121de0f014b6c31d1ad819e59577
+  testCase14 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Expression.Under, Main.testCase15)) -}
+7afc0a2447e5ec56b33508caad3823cb
+  testCase15 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testCase22 Main.testCase16) -}
+ba65bad865055b16f00308f247fd3045
+  testCase16 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testCase20
+                   Main.testCase17) -}
+6631698670e273c8af2b91781c4d7488
+  testCase17 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testCase18
+                   (GHC.Types.[] @ Expression.Expr)) -}
+25caab4a08d5166b2293e99d3579d57f
+  testCase18 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase19) -}
+cfa4cf11d413c8c4a9e8ea28130940e0
+  testCase19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "its false"#) -}
+7aa5b6cd53b96d565ad5014a73bdbe8d
+  testCase2 :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testCase58 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testCase3) -}
+8b16fd5b646fe5e845fc9bbff5632865
+  testCase20 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase21) -}
+7fe018c75a721ba6260f587d39276b90
+  testCase21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "logging"#) -}
+2a26efe61ad4d624c95868554b38a66d
+  testCase22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Debug.log"#) -}
+9c584166437ccb21e51bd018bd4d0cd5
+  testCase23 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase24) -}
+b85c079e7ad8e4656f98063e7532435c
+  testCase24 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "false"#) -}
+a8e83d35be6f3ce9abbc579fb7700684
+  testCase25 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Expression.BoolTrue, Main.testCase26)) -}
+0808f9ec1632ae2c62255521fd98b79e
+  testCase26 :: Expression.Expr
+  {- Unfolding: (Expression.Let Main.testCase34 Main.testCase27) -}
+954eec4799845163131be2896e81363d
+  testCase27 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase28
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+a52f07652895c199de5b70d870c4131d
+  testCase28 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Expression.Under, Main.testCase29)) -}
+301c9c23329e9daf11d42eecc2b17a29
+  testCase29 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testCase22 Main.testCase30) -}
+5b03e8764989c85d369dea4c2f68ae3d
+  testCase3 :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testCase41 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testCase4) -}
+336b4d28ee855871585aecbf12d9a017
+  testCase30 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testCase20
+                   Main.testCase31) -}
+a20ac479016a43e32dea99d850130ffe
+  testCase31 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testCase32
+                   (GHC.Types.[] @ Expression.Expr)) -}
+7904b76c8bf2f77ad22e288c7a2ac5ae
+  testCase32 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase33) -}
+fa1c9dffe23f7fbdc0f32b65e25d5f28
+  testCase33 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "its true"#) -}
+24ab7611b10910be5a46782e8ef230e3
+  testCase34 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase35) -}
+a9d654daeda511f158b9b01aeac92dfd
+  testCase35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "true"#) -}
+c6d6fb2752719844cd99113c07c9d088
+  testCase36 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "let in case"#) -}
+5b11629b79b7956d59f06e04f9ff17e5
+  testCase37 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testCase38
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+11f52661c05e438da18d279567c9f17b
+  testCase38 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testCase39
+                   GHC.Stack.Types.EmptyCallStack) -}
+b85a52d52a66cff58af56f85f4a4b9b7
+  testCase39 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testOp57
+                   Main.testDec40
+                   Main.testOp57
+                   Main.testLet33) -}
+62c24a7c879b4db05161336dc9e7d600
+  testCase4 :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testCase5 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Types.[] @ (GHC.Types.IO ()))) -}
+11d0ab00cbd20f11c91dae591807f1bd
+  testCase40 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/case5.txt"#) -}
+1b56d95ae95e054aa62bdb075aed3041
+  testCase41 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testCase57
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testCase53 Main.testLet29 ipv3 Main.testCase42)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+e60492b1136cbb89370358aee05ccb55
+  testCase42 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testCase43
+                   Main.testDec3) -}
+27d445272f26f92e4641d144540fe1cc
+  testCase43 :: GHC.Base.String
+  {- Unfolding: (Main.testLet16 Main.testCase44) -}
+4bfcd44c07f0cbc1eddc00197fda1c39
+  testCase44 :: Expression.Expr
+  {- Unfolding: (Expression.Case Main.testCase49 Main.testCase45) -}
+e9a09d30efb4ecaaba84da7ec96ca86a
+  testCase45 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase48
+                   Main.testCase46) -}
+8ef38ae7ce749f41209c3d8662efb3b7
+  testCase46 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase47
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+b1836403b6a9e645920bd1550759c2e7
+  testCase47 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Expression.BoolFalse, Main.testCase23)) -}
+ae1dc143e00529d9a0afc88c9ff9d8cf
+  testCase48 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Expression.BoolTrue, Main.testCase34)) -}
+89cfaeede47545c2e14d43c316c7e2a6
+  testCase49 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testOp11 Main.testCase50) -}
+5be0ff37429dd0bd2d2892bbde32a090
+  testCase5 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testCase40
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testCase37 Main.testCase36 ipv3 Main.testCase6)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+aa99648a037ad2782cc4f5ecd8e35a11
+  testCase50 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testCase51
+                   (GHC.Types.[] @ Expression.Expr)) -}
+b909744d36b7fc7c44863f203c771e3f
+  testCase51 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testCase52
+                   (GHC.Types.[] @ Expression.Expr)) -}
+a38b40c75261032002763c067ea10d55
+  testCase52 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "x"#) -}
+537696e25f4e362edfb410d5bc92d52f
+  testCase53 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testCase54
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+3756d47a8e7a0402555696b5feb5121b
+  testCase54 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testCase55
+                   GHC.Stack.Types.EmptyCallStack) -}
+bf4e154a4babef762bc155617dabcdba
+  testCase55 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testCase56
+                   Main.testDec40
+                   Main.testCase56
+                   Main.testLet33) -}
+add58389c5046753d261e2ceff2dda43
+  testCase56 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 63#) -}
+df1812be17501c10868457b45efbc970
+  testCase57 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/case4.txt"#) -}
+e1c43dc2941062291fcdfcebb730b11d
+  testCase58 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testCase74
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testCase69 Main.testCase68 ipv3 Main.testCase59)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+e2ae2dee82544de7264ca1af0ad6a88d
+  testCase59 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testCase60
+                   Main.testDec3) -}
+b17642b2845e3dfb8cf73cc134d99b9e
+  testCase6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testCase7
+                   Main.testDec3) -}
+04fbeb0e2a2df86a4a5c8f58bb41db0e
+  testCase60 :: GHC.Base.String
+  {- Unfolding: (Main.testLet16 Main.testCase61) -}
+de263bfbe7c32394df000bd62558e012
+  testCase61 :: Expression.Expr
+  {- Unfolding: (Expression.Case Main.testCase67 Main.testCase62) -}
+63ed20be9c78f2219b4b06ed405c1bac
+  testCase62 :: [(Expression.Expr, Expression.Expr)]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase65
+                   Main.testCase63) -}
+bb1f134d1803ad303238eaa1f182b880
+  testCase63 :: [(Expression.Expr, Expression.Expr)]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase64
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+8bd765c45d5dabcb80b452305bb98a13
+  testCase64 :: (Expression.Expr, Expression.Expr)
+  {- HasNoCafRefs,
+     Unfolding: ((Expression.Under, Expression.BoolFalse)) -}
+c3d051ace3149a7aea34db662e2d4d23
+  testCase65 :: (Expression.Expr, Expression.Expr)
+  {- HasNoCafRefs,
+     Unfolding: ((Main.testCase66, Expression.BoolTrue)) -}
+a1e3fec2f98f3af395ea932abbfb16ba
+  testCase66 :: Expression.Expr
+  {- HasNoCafRefs,
+     Unfolding: (Expression.Tuple2 Main.testList12 Main.testList10) -}
+9e3006f2548f63693715e51c0f934674
+  testCase67 :: Expression.Expr
+  {- Unfolding: (Expression.Tuple2 Main.testOp10 Main.testOp6) -}
+33d8d24935308b85809a262deed9c97c
+  testCase68 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "tuple"#) -}
+538ac858943716f7523472d1eddec094
+  testCase69 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testCase70
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+ef8e9eed824151b79c7044fbd2315d98
+  testCase7 :: GHC.Base.String
+  {- Unfolding: (Main.testLet16 Main.testCase8) -}
+047e2c5da02318edb88f1b5b30f0a553
+  testCase70 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testCase71
+                   GHC.Stack.Types.EmptyCallStack) -}
+c69915404410e4597460a277f29a6712
+  testCase71 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testCase73
+                   Main.testDec40
+                   Main.testCase73
+                   Main.testCase72) -}
+fd3c72075a2bb2d02d3c2d6e45a406ae
+  testCase72 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 33#) -}
+d3274d2675b0c9439f4297203bdab8f2
+  testCase73 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 53#) -}
+934ecc987caa5834ec9d6b0ada2eece5
+  testCase74 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/case3.txt"#) -}
+a19ba43c683357a655591e206f797b94
+  testCase75 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testCase89
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testCase85 Main.testDec21 ipv3 Main.testCase76)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+230ecc83208bbc08dcc5b3f56ff4738e
+  testCase76 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testCase77
+                   Main.testDec3) -}
+6f45ae12aab5270baf92b4e963f323b0
+  testCase77 :: GHC.Base.String
+  {- Unfolding: (Main.testLet16 Main.testCase78) -}
+607069c75131b914dab5b5b850e54b2e
+  testCase78 :: Expression.Expr
+  {- Unfolding: (Expression.Case Main.testCase83 Main.testCase79) -}
+b93dfc57828de28dee945eef32c04829
+  testCase79 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testDec14
+                   Main.testCase80) -}
+edebf32bb26c910c120d4d0657d678ca
+  testCase8 :: Expression.Expr
+  {- Unfolding: (Expression.Case Main.testOp6 Main.testCase9) -}
+63b95fa3d81908baa07fdc75686b7a7a
+  testCase80 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase81
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+8b21938775d713766508cfc5e21f2e26
+  testCase81 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testDec12, Main.testCase82)) -}
+d697ab8fe0166f2e1a3d64d4412bd67a
+  testCase82 :: Expression.Expr
+  {- HasNoCafRefs,
+     Unfolding: (Expression.Str (GHC.Types.[] @ GHC.Types.Char)) -}
+7ab14e348afbb2f8fe47228420078b68
+  testCase83 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testCase84
+                   (GHC.Types.[] @ Expression.Expr)) -}
+f01f71b430793b752ab1e6b124471fd9
+  testCase84 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "m"#) -}
+5288bff31ba4892d668b5bd460d1b406
+  testCase85 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testCase86
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+ae615583226b942a1afcd6f089a3f4bb
+  testCase86 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testCase87
+                   GHC.Stack.Types.EmptyCallStack) -}
+acdc813dfd81e12c72cd2fff8bc26055
+  testCase87 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testCase88
+                   Main.testDec40
+                   Main.testCase88
+                   Main.testCase72) -}
+e6c0fce18e815d8b1e91c4bd78b91c85
+  testCase88 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 44#) -}
+419c67f7d7c0a84c374e4b87f88c9512
+  testCase89 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/case2.txt"#) -}
+f47aa18836b7740d4e491a66da2bf276
+  testCase9 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase25
+                   Main.testCase10) -}
+f230b180c7a12f8ecf7b70a6d76440ca
+  testCase90 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testCase117
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testCase112 Main.testCase111 ipv3 Main.testCase91)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+d7bd04907e4f1035c76d1c141fc7db1a
+  testCase91 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testCase92
+                   Main.testDec3) -}
+92d177470d4d3b77ffc4b04f9ee8cc6b
+  testCase92 :: GHC.Base.String
+  {- Unfolding: (Main.testLet16 Main.testCase93) -}
+4897a9dc757934daa0fcc8c06d116055
+  testCase93 :: Expression.Expr
+  {- Unfolding: (Expression.Case Main.testCase109 Main.testCase94) -}
+e62f15f84df46699e811241fe4eb309e
+  testCase94 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase105
+                   Main.testCase95) -}
+654d526f64a6d8c73077f6a5e4164728
+  testCase95 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase101
+                   Main.testCase96) -}
+5920d0ba53a7a30b9dd5ea488be7226e
+  testCase96 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testCase97
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+0ecddbcc652e9cbc5fb55bf524e786dd
+  testCase97 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testCase100, Main.testCase98)) -}
+c0ca33b6a6e9da6712c2c73f49b57264
+  testCase98 :: Expression.Expr
+  {- Unfolding: (Expression.Str Main.testCase99) -}
+a653ff398b1867fb2d9d27c94230fc30
+  testCase99 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "green"#) -}
+ced437d40e6a60b1e957767dd4120d92
+  testDec :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testDec1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Types.[] @ (GHC.Types.IO ()))) -}
+61b5ab4958d22e9efa54fa0c67baf659
+  testDec1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testDec46
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testDec36 Main.testDec35 ipv3 Main.testDec2)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+9bc11e2de391963d646eaa84cf83a921
+  testDec10 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDec11
+                   (GHC.Types.[] @ Expression.Expr)) -}
+5abcb1ce2e0737232e1ac613e0a055c5
+  testDec11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "default"#) -}
+2352ee8c9ab9c2a1996565731358ac06
+  testDec12 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDec13
+                   (GHC.Types.[] @ Expression.Expr)) -}
+32251821136e1c8d090223762fa22b01
+  testDec13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Nothing"#) -}
+06a38520225d58972f7a42180fb583e3
+  testDec14 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testDec17, Main.testDec15)) -}
+bb4a9664cf8a9c89ab795cde7e34bd27
+  testDec15 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDec16
+                   (GHC.Types.[] @ Expression.Expr)) -}
+72933716a66a84055f3321c9b149ab35
+  testDec16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "data"#) -}
+0b6565e47c4cf6fcfd4846f2ae8d08bc
+  testDec17 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testDec19 Main.testDec18) -}
+3dea2300e83f53ba9ee05edb0a35bb1b
+  testDec18 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testDec15
+                   (GHC.Types.[] @ Expression.Expr)) -}
+e9b0e5fabf227158ee9f8191079a32d3
+  testDec19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Just"#) -}
+f69c04e1a1473f39309cd2e16fd09635
+  testDec2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testDec4
+                   Main.testDec3) -}
+397652d6342860cf50ed441251585abc
+  testDec20 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDec21
+                   (GHC.Types.[] @ Expression.Expr)) -}
+1b89eb85e5554f3e79ae4d129136eb9a
+  testDec21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "maybe"#) -}
+7b0e68943081f54d212f21fb65280ca2
+  testDec22 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testDec10
+                   Main.testDec23) -}
+bf44e4fc8c09ecc4dfe5fa16f18a393b
+  testDec23 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testDec20
+                   (GHC.Types.[] @ Expression.Expr)) -}
+ad9e03ca2c3abcd5a8120dfa653f766b
+  testDec24 :: Type.TypeDec
+  {- Unfolding: (Type.TApp Main.testDec25) -}
+cc02c2d230662334f3107c2f7950206d
+  testDec25 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDec28
+                   Main.testDec26) -}
+d845e35358b1a8adf241f21d7674518b
+  testDec26 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDec30
+                   Main.testDec27) -}
+66ce28a1c5e4e07dbfc8ba40a19ff4ec
+  testDec27 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDec28
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+50b505a8a65c9a17c11574dac125a968
+  testDec28 :: Type.TypeDec
+  {- Unfolding: (Type.Params
+                   Main.testDec29
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+d4510fe8a3a27967151865ea78441573
+  testDec29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "a"#) -}
+00a555095297f1031c9ece28c94facc6
+  testDec3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+7664f72a986b72f2ec620eea55361ddf
+  testDec30 :: Type.TypeDec
+  {- Unfolding: (Type.Params Main.testDec31 Main.testDec27) -}
+fe6ea197aa3c8fe12647cb04661b8a47
+  testDec31 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Maybe"#) -}
+c4033f1a9725081e0170e1317a87a956
+  testDec32 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "withDefault"#) -}
+b9b5fe0f63ed8f466b281be509af412f
+  testDec33 :: Decleration.Dec -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: Decleration.Dec) ->
+                 Text.PrettyPrint.Annotated.HughesPJ.fullRenderAnn
+                   @ ()
+                   @ GHC.Base.String
+                   Text.PrettyPrint.Annotated.HughesPJ.PageMode
+                   Text.PrettyPrint.Annotated.HughesPJ.render3
+                   Text.PrettyPrint.Annotated.HughesPJ.render2
+                   Main.testDec34
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   (Decleration.toDocD x)
+                     `cast`
+                   (Text.PrettyPrint.HughesPJ.N:Doc[0])) -}
+f611ea0e2d2ee419363a67173501d60c
+  testDec34 ::
+    Text.PrettyPrint.Annotated.HughesPJ.AnnotDetails ()
+    -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, HasNoCafRefs,
+     Unfolding: (\ (ds :: Text.PrettyPrint.Annotated.HughesPJ.AnnotDetails
+                            ())
+                   (eta :: GHC.Base.String)[OneShot] ->
+                 case ds of wild {
+                   DEFAULT -> eta
+                   Text.PrettyPrint.Annotated.HughesPJ.NoAnnot s dt1
+                   -> case s of wild1 {
+                        Text.PrettyPrint.Annotated.HughesPJ.Chr dt
+                        -> GHC.Types.: @ GHC.Types.Char (GHC.Types.C# dt) eta
+                        Text.PrettyPrint.Annotated.HughesPJ.Str s1
+                        -> GHC.Base.++ @ GHC.Types.Char s1 eta
+                        Text.PrettyPrint.Annotated.HughesPJ.PStr s1
+                        -> GHC.Base.++ @ GHC.Types.Char s1 eta } }) -}
+9136fbea37a0ac94b03e55fa97b01f14
+  testDec35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test"#) -}
+c0be9717f8f7ea9d3e1f2d71f4590b5d
+  testDec36 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testDec37
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+a6118ab4c1528ba0e315bc86e22838d3
+  testDec37 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testDec38
+                   GHC.Stack.Types.EmptyCallStack) -}
+f8ef46ac992ce0be01096c7475e9d5f2
+  testDec38 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDec41
+                   Main.testDec40
+                   Main.testDec41
+                   Main.testDec39) -}
+699beee79f9b1875e9d277b3cd964fb4
+  testDec39 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 32#) -}
+09ee23ecfa8f2e787bb3d578a96bd90d
+  testDec4 :: GHC.Base.String
+  {- Unfolding: (Main.testDec33 Main.testDec5) -}
+7be87fefb1027e979f42864dc003ef6e
+  testDec40 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 9#) -}
+805859a55c2e0d1159d96f8e05ce1a73
+  testDec41 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 154#) -}
+124e8e54ac64633651b878cfb0c2dba4
+  testDec42 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/Spec.hs"#) -}
+6f4958884cf0e310a7c4e33b9f42ea27
+  testDec43 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Main"#) -}
+065d1f94de1e3bf90329ef531b5d85a9
+  testDec44 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "main"#) -}
+e12a0b7686a85d444a6382223cc60779
+  testDec45 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "assertEqual"#) -}
+6a02ba5d3a5c2e8dedb66c694c1bf5f2
+  testDec46 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/dec.txt"#) -}
+6512fbc1910185470d9c1d7cc985222c
+  testDec5 :: Decleration.Dec
+  {- Unfolding: (Decleration.Dec
+                   Main.testDec32
+                   Main.testDec24
+                   Main.testDec22
+                   Main.testDec6) -}
+a91b74542cd0e867645235ec3575d5b5
+  testDec6 :: Expression.Expr
+  {- Unfolding: (Expression.Case Main.testDec20 Main.testDec7) -}
+f3fe9f43ceaf71e246ca02acd3809cf6
+  testDec7 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testDec14
+                   Main.testDec8) -}
+2aed3ced201b152d506ee8fe1ce05dbd
+  testDec8 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testDec9
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+0c0062ff0319e185366a9e279e3a37e6
+  testDec9 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testDec12, Main.testDec10)) -}
+a66785b4916224c8f4811a41a592cac2
+  testDecType :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testDecType1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Types.[] @ (GHC.Types.IO ()))) -}
+95781df17cb452eec45fe885b667c378
+  testDecType1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (Main.testDecType75
+                         Main.testDecType74
+                         Main.testDecType72
+                         Main.testDecType67)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case (Main.testDecType61
+                         Main.testDecType60
+                         Main.testDecType58
+                         Main.testDecType46)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case (Main.testDecType41
+                         Main.testDecType40
+                         Main.testDecType38
+                         Main.testDecType18)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 (Main.testDecType12
+                    Main.testDecType11
+                    Main.testDecType9
+                    Main.testDecType2)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv4 } } }) -}
+24d9dfb67f993eab730b5fa2c75edebb
+  testDecType10 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testDecType_s) -}
+12f30b20ab7aae5d406d2d6954a79051
+  testDecType11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "noh"#) -}
+d3f94c4425237525149752e6e2235ab2
+  testDecType12 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testDecType13
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+244cba6efd90d6636fbdab1d9bccd345
+  testDecType13 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testDecType14
+                   GHC.Stack.Types.EmptyCallStack) -}
+0cb5448efe02bb5bacd5322026a653fc
+  testDecType14 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDecType17
+                   Main.testDec40
+                   Main.testDecType16
+                   Main.testDecType15) -}
+46ca5635306037157760715a9704e2fe
+  testDecType15 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 19#) -}
+df81777456de72f1aaece130f0a054ae
+  testDecType16 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 172#) -}
+4ca526f3e822ee4623657380b028a498
+  testDecType17 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 168#) -}
+31f85e484a94f3c15232c79b2c7103c8
+  testDecType18 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Decleration.toDocD Main.testDecType19) -}
+ba6b2552f3c5517438727aa8a0ccafb7
+  testDecType19 :: Decleration.Dec
+  {- Unfolding: (Decleration.DecType
+                   Main.testDecType37
+                   (GHC.Types.[] @ GHC.Base.String)
+                   Main.testDecType20) -}
+646ce9b4a1fb91ae11b5b98e24c8879e
+  testDecType2 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Decleration.toDocD Main.testDecType3) -}
+7c8f66daaf14db34364669e3dab835d1
+  testDecType20 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType32
+                   Main.testDecType21) -}
+1ed13af19b7bdf3175bcbf621cd8c0c4
+  testDecType21 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType22
+                   (GHC.Types.[] @ (GHC.Base.String, [Type.TypeDec]))) -}
+dfe2f6488389e2a788be597e756fdbe8
+  testDecType22 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDecType31, Main.testDecType23)) -}
+9560af6664c7f2944ae378d0bf6da689
+  testDecType23 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDecType24
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+460ac81f028e544e15ef9abd14631fa6
+  testDecType24 :: Type.TypeDec
+  {- Unfolding: (Type.TApp Main.testDecType25) -}
+8e8fc606e3647e8fefaa2762d99d86de
+  testDecType25 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDecType29
+                   Main.testDecType26) -}
+581d6c62c1c6ab6fb43135dd3aa07315
+  testDecType26 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDecType27
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+eaeedf1a169d5b139aa28711dc025444
+  testDecType27 :: Type.TypeDec
+  {- Unfolding: (Type.Params
+                   Main.testDecType28
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+956242204e0799f2e42be60fac88f6d8
+  testDecType28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Int"#) -}
+03210a0722aa7e06be2f77128c8b3fbf
+  testDecType29 :: Type.TypeDec
+  {- Unfolding: (Type.Params
+                   Main.testDecType30
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+72bf50ef9f5182983481cf94997208ca
+  testDecType3 :: Decleration.Dec
+  {- Unfolding: (Decleration.DecType
+                   Main.testDec31
+                   Main.testDecType8
+                   Main.testDecType4) -}
+478f2bb73a41d4a7e8657c6c322c94ac
+  testDecType30 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "String"#) -}
+898c85f6dd75311a49ba073bc642bf05
+  testDecType31 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "DataB"#) -}
+1b77565dcebb1d52e55fd1e358aa9b53
+  testDecType32 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDecType36, Main.testDecType33)) -}
+0b5c7c1ae44fc536bf0556c4420b5f86
+  testDecType33 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDecType34
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+816b46f5ad927f8b70f449fac28f30d1
+  testDecType34 :: Type.TypeDec
+  {- Unfolding: (Type.Params Main.testDec31 Main.testDecType35) -}
+3e84cefe8d79a1cd040a537c73047b4f
+  testDecType35 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDecType29
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+37d52cc37602fb8dc9ecdd626c7605dc
+  testDecType36 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "DataA"#) -}
+fda7acf5111936b3121ef4dc1af05235
+  testDecType37 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Data"#) -}
+36632ed019d69db785b7ffbe82d6c5c7
+  testDecType38 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testDecType_s1
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testDecType39
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+4664384c2923ca80485fb9b8152a468a
+  testDecType39 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testDecType_s1) -}
+fd0b7b30050afc8a7ba10a1add5a1b29
+  testDecType4 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType7
+                   Main.testDecType5) -}
+5d038e8f232f8e9d82ba661f886a02da
+  testDecType40 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ":("#) -}
+d7e43d6653a5dc1dba95907d4cd9a7f7
+  testDecType41 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testDecType42
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+e24e20b06a83117f6ba13df90770c6c1
+  testDecType42 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testDecType43
+                   GHC.Stack.Types.EmptyCallStack) -}
+e9f00537b09e525eb2cc22900f95ec02
+  testDecType43 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDecType45
+                   Main.testDec40
+                   Main.testDecType44
+                   Main.testDecType15) -}
+eb3cabcda8beb253e7c7527400884308
+  testDecType44 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 167#) -}
+92e4b49ce4ae5c0484c7dcfd9579f885
+  testDecType45 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 163#) -}
+37bd7ec16172d099fe7d16fc379219f1
+  testDecType46 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Decleration.toDocD Main.testDecType47) -}
+b53919f2c2ecb3cb1972b4642263590d
+  testDecType47 :: Decleration.Dec
+  {- Unfolding: (Decleration.DecType
+                   Main.testDecType57
+                   (GHC.Types.[] @ GHC.Base.String)
+                   Main.testDecType48) -}
+68308d7b39378a273a49d614726e7503
+  testDecType48 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType55
+                   Main.testDecType49) -}
+ce88fc509aaf9797b9fc5ecb0d1aca17
+  testDecType49 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType53
+                   Main.testDecType50) -}
+1d7931047e5fb9441058246c0d566efe
+  testDecType5 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType6
+                   (GHC.Types.[] @ (GHC.Base.String, [Type.TypeDec]))) -}
+65dbb09de127b076ea4f8edfea632878
+  testDecType50 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType51
+                   (GHC.Types.[] @ (GHC.Base.String, [Type.TypeDec]))) -}
+e8275820240f106a28e4accf5114e1ec
+  testDecType51 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDecType52,
+                  GHC.Types.[] @ Type.TypeDec)) -}
+e92ba2c64d074ddcc99231b6463aa5b4
+  testDecType52 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Green"#) -}
+4c01715378d6b6cc9e74b80744daf35d
+  testDecType53 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDecType54,
+                  GHC.Types.[] @ Type.TypeDec)) -}
+fc6e775fb034c1d41f400ec13ce62017
+  testDecType54 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Blue"#) -}
+ea0163e73cd95ed37a4dd82b1edb82bb
+  testDecType55 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDecType56,
+                  GHC.Types.[] @ Type.TypeDec)) -}
+7405d84f57c840508d233cbeb1f73d63
+  testDecType56 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Red"#) -}
+b1074d5e80c35bdb0d6c43fcfbc3bbed
+  testDecType57 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Color"#) -}
+3aaabfe0b39f25b548c0010db01d74f0
+  testDecType58 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testDecType_s2
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testDecType59
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+a78f1a47237ceb6e3a92fd36ec2ad79a
+  testDecType59 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testDecType_s2) -}
+efe4f85dc80343e66e1826275bc9910a
+  testDecType6 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDec19, Main.testDec27)) -}
+6dc00f6ad13653469a44fe271da9de39
+  testDecType60 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "que??"#) -}
+44b0435b1bad44f3f0c789b0110ed50c
+  testDecType61 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testDecType62
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+d7a10abfcf7158a22febfa6993d8ed1a
+  testDecType62 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testDecType63
+                   GHC.Stack.Types.EmptyCallStack) -}
+13793170fdf0c7b8103b05169ba096a6
+  testDecType63 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDecType66
+                   Main.testDec40
+                   Main.testDecType65
+                   Main.testDecType64) -}
+27f935cee7b213bbab614fae4b238293
+  testDecType64 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 85#) -}
+294ce2dfe15cbc07a11e65ff757f5e45
+  testDecType65 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 162#) -}
+706b8affe672fd35fe01739349c1aaa0
+  testDecType66 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 161#) -}
+79db9551922287a58cd498e60faf0e48
+  testDecType67 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Decleration.toDocD Main.testDecType68) -}
+31780fc16d2b0da2642102f887bd1f35
+  testDecType68 :: Decleration.Dec
+  {- Unfolding: (Decleration.DecType
+                   Main.testDecType71
+                   (GHC.Types.[] @ GHC.Base.String)
+                   Main.testDecType69) -}
+ecbd599c2df5d56a96608748f5cab5b3
+  testDecType69 :: [(GHC.Base.String, [Type.TypeDec])]
+  {- Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, [Type.TypeDec])
+                   Main.testDecType70
+                   (GHC.Types.[] @ (GHC.Base.String, [Type.TypeDec]))) -}
+4f4df59f4babd7508ad26665fca8344c
+  testDecType7 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDec13, GHC.Types.[] @ Type.TypeDec)) -}
+b4d8f317aaa58c3de80545e8d8935065
+  testDecType70 :: ([GHC.Types.Char], [Type.TypeDec])
+  {- Unfolding: ((Main.testDecType71, Main.testDecType35)) -}
+ba1e18543965ed5586615bba25ea6a3b
+  testDecType71 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "User"#) -}
+94b427dd5718e8d608242570fad872a4
+  testDecType72 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testDecType_s3
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testDecType73
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+8e15a656423302b8b0ba8efa259d4268
+  testDecType73 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testDecType_s3) -}
+541c6a478f54eb4c9b2cca357c0bf130
+  testDecType74 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "what even goes here?"#) -}
+3193b6b90daa3f928a0af5a01038a329
+  testDecType75 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testDecType76
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+59e01991fc7cd4ade5d79704f2087fac
+  testDecType76 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testDecType77
+                   GHC.Stack.Types.EmptyCallStack) -}
+4ab3070d443b9baeebfd12fb536c4d1f
+  testDecType77 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDecType80
+                   Main.testDec40
+                   Main.testDecType79
+                   Main.testDecType78) -}
+fe12d3d2db2e202dc860c71829d8abca
+  testDecType78 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 69#) -}
+4a75c9ffd39eaff0a9686ffa0a457658
+  testDecType79 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 160#) -}
+f61401d77d6410e0dce626902a413708
+  testDecType8 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.testDec29
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+fa96b74c7cdff00dc56388ab96ee1c17
+  testDecType80 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 159#) -}
+ae6cbaf7dc4608aaae94e70f3acecc1a
+  testDecType9 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testDecType_s
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testDecType10
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+8993e098567fa7eb81d8b195472ed388
+  testDecTypeAlias :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testDecTypeAlias1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Types.[] @ (GHC.Types.IO ()))) -}
+a6af07e1416ae914290485b1c2ef713f
+  testDecTypeAlias1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (Main.testDecTypeAlias21
+                         Main.testDecTypeAlias20
+                         Main.testDecTypeAlias18
+                         Main.testDecTypeAlias15)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (Main.testDecTypeAlias9
+                    Main.testDecTypeAlias8
+                    Main.testDecTypeAlias6
+                    Main.testDecTypeAlias2)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv }) -}
+13092b9b1378bd1b4198008c0cbd5aa2
+  testDecTypeAlias10 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testDecTypeAlias11
+                   GHC.Stack.Types.EmptyCallStack) -}
+e7f7320af53e2e3d3386605560c405a5
+  testDecTypeAlias11 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDecTypeAlias14
+                   Main.testDec40
+                   Main.testDecTypeAlias13
+                   Main.testDecTypeAlias12) -}
+227f58955b414f8eb2c1a54aded7795c
+  testDecTypeAlias12 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 82#) -}
+83019baebf4c946e4a025952d5d51cd9
+  testDecTypeAlias13 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 180#) -}
+a6dbdcef5a03450de56837e2b58ba9ce
+  testDecTypeAlias14 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 179#) -}
+924a502a35011d7adff0800667dc260f
+  testDecTypeAlias15 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Decleration.toDocD Main.testDecTypeAlias16) -}
+1b10d5161e5a384cd1566f5bf7ff189a
+  testDecTypeAlias16 :: Decleration.Dec
+  {- Unfolding: (Decleration.DecTypeAlias
+                   Main.testDecTypeAlias17
+                   (GHC.Types.[] @ GHC.Base.String)
+                   Main.testDecType27) -}
+a7f8501b7919e9d513a5cfc1bb527346
+  testDecTypeAlias17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Model"#) -}
+56d5406a64ff27eae72121bc83b7ee2d
+  testDecTypeAlias18 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testDecTypeAlias_s1
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testDecTypeAlias19
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+0a3973bf2248739db284a85a8f73f409
+  testDecTypeAlias19 ::
+    Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testDecTypeAlias_s1) -}
+9ad6972c5da6a7a2ecc8784a0e7b4b8e
+  testDecTypeAlias2 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Decleration.toDocD Main.testDecTypeAlias3) -}
+4858c3283719892b24e1dbca287a4eb7
+  testDecTypeAlias20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "this stuff"#) -}
+80fe74ca08b3694ac74f1c61a2736e0d
+  testDecTypeAlias21 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testDecTypeAlias22
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+50dccf72a2d157075c8428d7e50ee4c1
+  testDecTypeAlias22 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testDecTypeAlias23
+                   GHC.Stack.Types.EmptyCallStack) -}
+2ae97b52f977ae429ecf2355146d416d
+  testDecTypeAlias23 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testDecTypeAlias26
+                   Main.testDec40
+                   Main.testDecTypeAlias25
+                   Main.testDecTypeAlias24) -}
+bf1d0b9d1cb94f1e6d5c0ffc70578b71
+  testDecTypeAlias24 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 60#) -}
+6dd8e05ce027532e26b86143677ebf3e
+  testDecTypeAlias25 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 178#) -}
+20ac0da294369b3cda9c71e09cad3a74
+  testDecTypeAlias26 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 177#) -}
+4efdd69c690ee7c3bf8e9588034f94e0
+  testDecTypeAlias3 :: Decleration.Dec
+  {- Unfolding: (Decleration.DecTypeAlias
+                   Main.testDecTypeAlias5
+                   Main.testDecType8
+                   Main.testDecTypeAlias4) -}
+270402d91e7125ac351d500abd2ce273
+  testDecTypeAlias4 :: Type.TypeDec
+  {- Unfolding: (Type.TTuple2 Main.testDec28 Main.testDec28) -}
+9bfeb281b05e787b05ff3553e2d418b4
+  testDecTypeAlias5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Duple"#) -}
+6740dc564d784ecc89a9bc63f6ab54e2
+  testDecTypeAlias6 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testDecTypeAlias_s
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testDecTypeAlias7
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+afd7ca4961f3b4a3413c6ab64a31bf48
+  testDecTypeAlias7 ::
+    Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testDecTypeAlias_s) -}
+9c9e7fceea71215302da9c3f2e837cc5
+  testDecTypeAlias8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "dubple"#) -}
+270c99e8786669545c8a245e226bf7ce
+  testDecTypeAlias9 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testDecTypeAlias10
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+eebbaf8ba849f96194a28fe74064c4a5
+  testDecTypeAlias_s :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "type alias Duple a = (a, a)"#) -}
+dabf7e363c8c0be148b442153306ff2d
+  testDecTypeAlias_s1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "type alias Model = Int"#) -}
+96ad125741f49cb6997e7c54fda7dc27
+  testDecType_s :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "type Maybe a = Nothing | Just a"#) -}
+91cb46e95cdc5f6551892e62aae90520
+  testDecType_s1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "type Data = DataA (Maybe String) | DataB (String -> Int)"#) -}
+87169887d2c824af93e5ea935f9a0d4e
+  testDecType_s2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "type Color = Red | Blue | Green"#) -}
+ae5bc0b0141cca4f4724eddc01d0688d
+  testDecType_s3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "type User = User String"#) -}
+c1997dfb452006cc1a47a46ecf2998d6
+  testLet :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testLet24 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testLet1) -}
+6f619101c63b6861238755e99098e58d
+  testLet1 :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testLet2 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Types.[] @ (GHC.Types.IO ()))) -}
+b9c096e37b35f53c401d8f84fb1cdaad
+  testLet10 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 6#) -}
+cf0b7044d5e019efbceacca9b3730de7
+  testLet11 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testOp10, Main.testLet12)) -}
+f29af3c8722fe7d4bab9c825bff4145f
+  testLet12 :: Expression.Expr
+  {- HasNoCafRefs, Unfolding: (Expression.Int Main.testLet13) -}
+e83394f4025b87df6fcad1fe7dffdb79
+  testLet13 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 5#) -}
+f0cc7fa7b0d2729cb0f7f23cb5812052
+  testLet14 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testOp11 Main.testLet15) -}
+5b49f26679ed454d3c6d7472ff79ae1e
+  testLet15 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testOp10
+                   Main.testOp5) -}
+05d68d8de14fefd48d810a3601528459
+  testLet16 :: Expression.Expr -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: Expression.Expr) ->
+                 Text.PrettyPrint.Annotated.HughesPJ.fullRenderAnn
+                   @ ()
+                   @ GHC.Base.String
+                   Text.PrettyPrint.Annotated.HughesPJ.PageMode
+                   Text.PrettyPrint.Annotated.HughesPJ.render3
+                   Text.PrettyPrint.Annotated.HughesPJ.render2
+                   Main.testDec34
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   (Expression.toDoc x)
+                     `cast`
+                   (Text.PrettyPrint.HughesPJ.N:Doc[0])) -}
+0f9dfadd35dfb186f928b87f93cc37da
+  testLet17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "more variables"#) -}
+94c2ef7a361e4cfbf707e1ec6e7665f1
+  testLet18 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testLet19
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+489f3b30b6eb546d7a6f02a35951ac61
+  testLet19 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testLet20
+                   GHC.Stack.Types.EmptyCallStack) -}
+50f768bbb47d757cfc8b35fff0c00eda
+  testLet2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testLet23
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testLet18 Main.testLet17 ipv3 Main.testLet3)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+7f06374b413567f0f1a2682793785bef
+  testLet20 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testLet22
+                   Main.testDec40
+                   Main.testLet22
+                   Main.testLet21) -}
+c556cc1fcf3028097deb3d65543d8ff5
+  testLet21 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 42#) -}
+f798d1b0c3f013c974e06f8412e4caaf
+  testLet22 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 99#) -}
+7cb8afde534c5df071e2b656dc40b257
+  testLet23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/let2.txt"#) -}
+6352958f91c8245c149e9483b807d49b
+  testLet24 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.testLet35
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testLet30 Main.testLet29 ipv3 Main.testLet25)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+80c62722b9b0c2647b74f8f3af064302
+  testLet25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testLet26
+                   Main.testDec3) -}
+9d2ecc0478881842ad5e809fcbc43868
+  testLet26 :: GHC.Base.String
+  {- Unfolding: (Main.testLet16 Main.testLet27) -}
+82b1cbfc6c113b45cbcf5f4aac4bb4ba
+  testLet27 :: Expression.Expr
+  {- Unfolding: (Expression.Let Main.testOp10 Main.testLet28) -}
+55f0e03ff92e8dea385b1b05c2b31090
+  testLet28 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testLet11
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+ad7cdf2cbaee6f8718a0f9222e85a2c8
+  testLet29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "application"#) -}
+9bec49159ea8282e3035dd3be83963ea
+  testLet3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.testLet4
+                   Main.testDec3) -}
+7bf3f9a4e1b00549f4f6d8c7afad5306
+  testLet30 ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Base.String -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ GHC.Base.String
+                   Main.testLet31
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   GHC.Show.$fShow[]_$s$fShow[]1) -}
+fe7bdb66d8c353f7173e1f91952e838e
+  testLet31 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testLet32
+                   GHC.Stack.Types.EmptyCallStack) -}
+d5c9305e45e93434313d1ceef83fdf0d
+  testLet32 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testLet34
+                   Main.testDec40
+                   Main.testLet34
+                   Main.testLet33) -}
+18230d8e48136492d49ecfb5ae4d0275
+  testLet33 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 39#) -}
+6c6ebefa7d6e073f832d85549e6efcb6
+  testLet34 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 90#) -}
+4705557356381b8782b6500aec643a51
+  testLet35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test/let1.txt"#) -}
+3b977f6299d1c1ae41d9ceedab1c2928
+  testLet4 :: GHC.Base.String
+  {- Unfolding: (Main.testLet16 Main.testLet5) -}
+4f388b4640400a6fec649af6a5723f77
+  testLet5 :: Expression.Expr
+  {- Unfolding: (Expression.Let Main.testLet14 Main.testLet6) -}
+314effef8c7f307d08650fa6eb0f1a64
+  testLet6 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testLet11
+                   Main.testLet7) -}
+c1e8eb688c7d20f0a55996fb88a57357
+  testLet7 :: [(Expression.Expr, Expression.Expr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Expression.Expr, Expression.Expr)
+                   Main.testLet8
+                   (GHC.Types.[] @ (Expression.Expr, Expression.Expr))) -}
+af1138baa2c35d2811b617148efb0bcc
+  testLet8 :: (Expression.Expr, Expression.Expr)
+  {- Unfolding: ((Main.testOp6, Main.testLet9)) -}
+ebbc2ade6102c5e4577632a57eaf253d
+  testLet9 :: Expression.Expr
+  {- HasNoCafRefs, Unfolding: (Expression.Int Main.testLet10) -}
+e01cd7217627fa81f064d83c2833007c
+  testList :: [Test.HUnit.Lang.Assertion]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Lang.Assertion
+                   Main.testList22
+                   Main.testList1) -}
+f93ad6749ee74c8a031f33b761e2432b
+  testList1 :: [Test.HUnit.Lang.Assertion]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Lang.Assertion
+                   Main.testList2
+                   (GHC.Types.[] @ Test.HUnit.Lang.Assertion)) -}
+ceb0e571ae542bc76902fb0c8624189b
+  testList10 :: Expression.Expr
+  {- HasNoCafRefs, Unfolding: (Expression.Int Main.testList11) -}
+d0d1490a9a6d6ad78371079336c0f45e
+  testList11 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 2#) -}
+556db82bb8dd7625894937b4346acf02
+  testList12 :: Expression.Expr
+  {- HasNoCafRefs, Unfolding: (Expression.Int Main.testList13) -}
+0cea8fb812f30b55569fca0ff828d5f0
+  testList13 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1#) -}
+dd4c2f617e25f2a8453d1fbce2feec1f
+  testList14 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testList_s
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testList15
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+d45d17d1fad75143e21dd5c9d4c221e4
+  testList15 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testList_s) -}
+79880a6345d431632bd5613fef55799a
+  testList16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "some stuff"#) -}
+e710dc0617aa389309442a9356c08677
+  testList17 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testList18
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+47cc647af22b8cc0e46957f559218ffb
+  testList18 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testList19
+                   GHC.Stack.Types.EmptyCallStack) -}
+0f30b167f522317cb7660e3151d88ee7
+  testList19 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testList21
+                   Main.testDec40
+                   Main.testList20
+                   Main.testType69) -}
+b4b0038ba6df8663067eef9949a85780
+  testList2 :: Test.HUnit.Lang.Assertion
+  {- Unfolding: (Main.testList17
+                   Main.testList16
+                   Main.testList14
+                   Main.testList3) -}
+96d3bd78b8fa9803ff2c965c9e81e291
+  testList20 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 117#) -}
+84ef31c8580d711cde9f6f0ccc9bc951
+  testList21 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 116#) -}
+17d4845a86548df18593e2d9e74800c7
+  testList22 :: Test.HUnit.Lang.Assertion
+  {- Unfolding: (Main.testList28
+                   Main.testList27
+                   Main.testList25
+                   Main.testList23) -}
+5b26bf95f520c24c96d936ebc585d16f
+  testList23 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testList24) -}
+be967d1e070cb3a94712ffafa8536173
+  testList24 :: Expression.Expr
+  {- HasNoCafRefs,
+     Unfolding: (Expression.List (GHC.Types.[] @ Expression.Expr)) -}
+e93fbc756d408ef50646c0df1e53a10c
+  testList25 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testList_s1
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testList26
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+82def5d99bb38c941defc022cafc68d8
+  testList26 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testList_s1) -}
+ae28a6f2a1e32855ef04c0dee1122da2
+  testList27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "empty"#) -}
+0ffe851e830ecaef6774df1091db09a7
+  testList28 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testList29
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+b9af3a5afc519c5f903866372ce3f7c4
+  testList29 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testList30
+                   GHC.Stack.Types.EmptyCallStack) -}
+24e0fe1d3fb00da99c00f380ccf53995
+  testList3 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testList4) -}
+1b7116628b1ce562502fc723d0327875
+  testList30 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testList32
+                   Main.testDec40
+                   Main.testList32
+                   Main.testList31) -}
+acd186d1b21d4e21a0e968eefecdaa41
+  testList31 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 58#) -}
+8c034f6d922aaf9205cf62b6e9927a32
+  testList32 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 114#) -}
+9ca3fa1e4660c6525a36df89ab6c5e8b
+  testList4 :: Expression.Expr
+  {- HasNoCafRefs, Unfolding: (Expression.List Main.testList5) -}
+3f99cb22883821863b8a3a40da98028f
+  testList5 :: [Expression.Expr]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testList12
+                   Main.testList6) -}
+3a2ab412a0eb5050affd0e4844c8ea21
+  testList6 :: [Expression.Expr]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testList10
+                   Main.testList7) -}
+c3b4dcada9d762bb625e20dbc708218c
+  testList7 :: [Expression.Expr]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testList8
+                   (GHC.Types.[] @ Expression.Expr)) -}
+02167dafd3fda0e702888a856bc7d9fa
+  testList8 :: Expression.Expr
+  {- HasNoCafRefs, Unfolding: (Expression.Int Main.testList9) -}
+88b381c76e4b6174128e3cebdd7d2fa0
+  testList9 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3#) -}
+71aa5cb6279412b16bc1af65392c9d4f
+  testList_s :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "[1, 2, 3]"#) -}
+c73a8546e8d7d47b653fe99f952581f1
+  testList_s1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "[]"#) -}
+4956be7a7e68c9d957799b0b892ba67d
+  testOp :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testOp1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Types.[] @ (GHC.Types.IO ()))) -}
+ad7be42a41f429e32de74599fc30c444
+  testOp1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (Main.testOp54 Main.testOp53 Main.testOp51 Main.testOp49)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case (Main.testOp44 Main.testOp43 Main.testOp41 Main.testOp38)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case (Main.testOp32 Main.testOp31 Main.testOp29 Main.testOp22)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 (Main.testOp16 Main.testOp15 Main.testOp13 Main.testOp2)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv4 } } }) -}
+e43bfe47ae905207f2b680695df72b35
+  testOp10 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testDec29
+                   (GHC.Types.[] @ Expression.Expr)) -}
+846b4acd0a95bd5e9b9cf46e2302376b
+  testOp11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "f"#) -}
+8f577deef21b22ce14edad988d9f67cd
+  testOp12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "+"#) -}
+2eae1605b14cdb3c4f91e2b651ec04f6
+  testOp13 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testOp_s
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testOp14
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+3ea57fef532d9a10eb1966a6c300cacd
+  testOp14 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testOp_s) -}
+ce16add0e415946ec137de6b8d35d54c
+  testOp15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "parens"#) -}
+e5f6b45502ed0e8785fb1b5b333609e4
+  testOp16 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testOp17
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+49cd8b5c0d05e2b9d4ae520ebc39ddd4
+  testOp17 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testOp18
+                   GHC.Stack.Types.EmptyCallStack) -}
+0d3c7867c09708f917bb9b7687a287c1
+  testOp18 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testOp21
+                   Main.testDec40
+                   Main.testOp20
+                   Main.testOp19) -}
+b5c5701a720d1f3b5c5f5d70b132876c
+  testOp19 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 71#) -}
+305294c925ce8dce46736c679ed434c0
+  testOp2 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testOp3) -}
+12f9b6ccc0c704969e5749eacdf7e7ae
+  testOp20 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 109#) -}
+4f87a463f9c0907ab5f02b7b33f57f61
+  testOp21 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 108#) -}
+7256a6633a46ecda154f46f10a4e9cec
+  testOp22 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testOp23) -}
+5696d720dd476a3461a09ca3714afa6b
+  testOp23 :: Expression.Expr
+  {- Unfolding: (Expression.Op
+                   Main.testOp28
+                   Main.testOp26
+                   Main.testOp24) -}
+30bc1e70ebb18c6446ac14dd06a64f3d
+  testOp24 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testOp25
+                   (GHC.Types.[] @ Expression.Expr)) -}
+9b7556edb987a04f12bde5a8c3905ff9
+  testOp25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "def"#) -}
+29e1bcf930c5082ec93dd88ffb712868
+  testOp26 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testOp27
+                   (GHC.Types.[] @ Expression.Expr)) -}
+88c9256d0d3277d43b80b4582f586d4c
+  testOp27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "abc"#) -}
+79eb1e4706b0678792da8454fcbe6889
+  testOp28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ">>>"#) -}
+0a29d284d4561c92c92ec8e319f4043b
+  testOp29 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testOp_s1
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testOp30
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+5da79e2c0d3a421a3e1363b91a2f826d
+  testOp3 :: Expression.Expr
+  {- Unfolding: (Expression.Op
+                   Main.testOp12
+                   Main.testOp8
+                   Main.testOp4) -}
+1ad065423f375f6edc569f21947aa260
+  testOp30 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testOp_s1) -}
+e60160e05e7eec737d76bcc9fa9df8cf
+  testOp31 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "longer names"#) -}
+bf5a0f81e7de9a7e770b02ce668e25eb
+  testOp32 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testOp33
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+46bf4cd39d5816276974044255c7512f
+  testOp33 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testOp34
+                   GHC.Stack.Types.EmptyCallStack) -}
+76d2cfedf006504f38042f1616bd4ce4
+  testOp34 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testOp37
+                   Main.testDec40
+                   Main.testOp36
+                   Main.testOp35) -}
+3511ca8976c7961cf44c5ad26ef06846
+  testOp35 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 55#) -}
+8cf048766d899c756f10e1baf517f33e
+  testOp36 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 107#) -}
+679d4dd716d193967f7ba9b966faf8d4
+  testOp37 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 106#) -}
+49df8e4b3317387630464ead528766ff
+  testOp38 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testOp39) -}
+24c987654d6337bb4a0a4d16fa6393b0
+  testOp39 :: Expression.Expr
+  {- Unfolding: (Expression.Op
+                   Main.testOp40
+                   Main.testOp10
+                   Main.testOp6) -}
+8034c4faddac66a2bdb9877bf200bcfc
+  testOp4 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testOp7 Main.testOp5) -}
+321e88837a38ae2bdf275ef50e653322
+  testOp40 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "<<<"#) -}
+7fd325e671fbd5410accdb67768a3315
+  testOp41 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testOp_s2
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testOp42
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+47b2c3758d3edbd5dc1834df22b2b8d8
+  testOp42 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testOp_s2) -}
+c5d4976e90e83aeea6980d6db4a7deb2
+  testOp43 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "compose"#) -}
+e7822d44e2122eef1c9d85b41de30e2d
+  testOp44 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testOp45
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+b312ef000d9b54a24e4733f73f42ae6e
+  testOp45 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testOp46
+                   GHC.Stack.Types.EmptyCallStack) -}
+d196561c1a58c832511ea337fc3570c5
+  testOp46 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testOp48
+                   Main.testDec40
+                   Main.testOp48
+                   Main.testOp47) -}
+717d4fc7ce7e66a3362f2d49f2dc8591
+  testOp47 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 86#) -}
+4ca86f56277abe7f74af60bb09ee5785
+  testOp48 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 105#) -}
+12d91d79ab951493721719015bab4ed9
+  testOp49 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Expression.toDoc Main.testOp50) -}
+e73c26ca351f62556cc59fea4192be22
+  testOp5 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testOp6
+                   (GHC.Types.[] @ Expression.Expr)) -}
+da55838654e56aa8db138e500cdd5126
+  testOp50 :: Expression.Expr
+  {- Unfolding: (Expression.Op
+                   Main.testOp12
+                   Main.testOp10
+                   Main.testOp6) -}
+8930eba42ccc39a0cebd6b6b5b31d919
+  testOp51 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testOp_s3
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testOp52
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+ccff3ddfb73d49bbcb4daa47824a988d
+  testOp52 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testOp_s3) -}
+c3ad739b2ff80ef982bd3314af501fad
+  testOp53 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "plus"#) -}
+c4b89999fe43d145ae52d8058bf71ff2
+  testOp54 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testOp55
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+fb5232c37694de78c574b7aada995f15
+  testOp55 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testOp56
+                   GHC.Stack.Types.EmptyCallStack) -}
+0d5fb8a88887d9c9bdbf5402dcf28a3a
+  testOp56 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testOp58
+                   Main.testDec40
+                   Main.testOp58
+                   Main.testOp57) -}
+03e806b0ae189952ba263f6e967c140e
+  testOp57 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 79#) -}
+c9892a6bd7f3a263cd31ff9d1a6cbbde
+  testOp58 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 104#) -}
+f8097c71c894874a9d793fb6b97824ba
+  testOp6 :: Expression.Expr
+  {- Unfolding: (Expression.App
+                   Main.testType23
+                   (GHC.Types.[] @ Expression.Expr)) -}
+7fdfd137f29f0e0b94fc8dce2bf0ded4
+  testOp7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "g"#) -}
+7f6e2aefbe3dfe45813bcd5343f799c0
+  testOp8 :: Expression.Expr
+  {- Unfolding: (Expression.App Main.testOp11 Main.testOp9) -}
+3779a1a9a6fcdb4aca498514f45a7eb3
+  testOp9 :: [Expression.Expr]
+  {- Unfolding: (GHC.Types.:
+                   @ Expression.Expr
+                   Main.testOp10
+                   (GHC.Types.[] @ Expression.Expr)) -}
+73bebb3f09d53ba84e9a8d2a4b656676
+  testOp_s :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "(f a) + (g b)"#) -}
+82eb9c010763fe4db949ec4b745f62bd
+  testOp_s1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "abc >>> def"#) -}
+777cb3e36838ac3bcf4c487c9fb14a87
+  testOp_s2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "a <<< b"#) -}
+af0d0d66d0a7ff7d5229b1ea18b87b9f
+  testOp_s3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "a + b"#) -}
+9469cb315b78a5576ace9d3c15eb36ed
+  testRender :: Expression.Expr -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (ast :: Expression.Expr) ->
+                 GHC.Base.++ @ GHC.Types.Char (Main.testLet16 ast) Main.testDec3) -}
+19fa52ee111a8d011b41ee737de4367a
+  testRenderDec :: Decleration.Dec -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (ast :: Decleration.Dec) ->
+                 GHC.Base.++ @ GHC.Types.Char (Main.testDec33 ast) Main.testDec3) -}
+bd81e9305379a6882f260bea8e3129c5
+  testType :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testType72 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testType1) -}
+d3cd986f6bd6ad7ab61b6ce87ea7d528
+  testType1 :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testType33 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.testType2) -}
+f1892d1d42838775d52a07c01e7c0ce9
+  testType10 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType11
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+c7b27781983df4e0961c17fa5335d2d9
+  testType100 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 122#) -}
+7a61ee21514f5598dc31cb485fdbdb58
+  testType11 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType12
+                   GHC.Stack.Types.EmptyCallStack) -}
+6734250a9696787650e7cdf044043da3
+  testType12 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType15
+                   Main.testDec40
+                   Main.testType14
+                   Main.testType13) -}
+827778f820df7c173b9d3cc95472c2a3
+  testType13 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 66#) -}
+de6d2f19ea83596267af74f5874090d1
+  testType14 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 137#) -}
+a28a9531865acf88dbedd4c62058a8b9
+  testType15 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 136#) -}
+43f9055f0364fdb715e8164909e9cb4e
+  testType16 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testType17) -}
+4462695d870edde0ffbacc3a2b5809b9
+  testType17 :: Type.TypeDec
+  {- Unfolding: (Type.Params Main.testDec31 Main.testType18) -}
+c58e02ebdd42c0c18e8a1717eb28c6a1
+  testType18 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testType19
+                   Main.testDecType35) -}
+10861b9f9c6254e5be6cf5a89e88858c
+  testType19 :: Type.TypeDec
+  {- Unfolding: (Type.TApp Main.testType20) -}
+1821b6e8d2b774d71a60029904c3a971
+  testType2 :: [GHC.Types.IO ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Types.IO ())
+                   Main.testType3 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Types.[] @ (GHC.Types.IO ()))) -}
+73f12aa96acbc906ce131d35ea278d9c
+  testType20 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDec28
+                   Main.testType21) -}
+4af344c5b1b5f977212fb9e689087261
+  testType21 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testType22
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+3d75d5b506fb1cd16b9c0fd1f3813e74
+  testType22 :: Type.TypeDec
+  {- Unfolding: (Type.Params
+                   Main.testType23
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+b209bac25c5677bd98f14282d262e1fc
+  testType23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "b"#) -}
+5e6b963853726fb415094fe62a890ce8
+  testType24 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testType_s1
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType25
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+556782ea9b9bcc61cc2d5dcbf8412890
+  testType25 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testType_s1) -}
+1fd3e6bd99cfdea0e4cbab24f98d1ac2
+  testType26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "more nested stuff"#) -}
+793489afc1cb77259f0d060c46ed5890
+  testType27 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType28
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+884650280b5046ad0d801f32e3271818
+  testType28 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType29
+                   GHC.Stack.Types.EmptyCallStack) -}
+20951f0932a657c6caaa4ea335e51545
+  testType29 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType32
+                   Main.testDec40
+                   Main.testType31
+                   Main.testType30) -}
+dcac286da172d15c29e82e3b4eee4196
+  testType3 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (Main.testType27
+                         Main.testType26
+                         Main.testType24
+                         Main.testType16)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (Main.testType10 Main.testType9 Main.testType7 Main.testType4)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv }) -}
+a9e624cbf343737f49afbdd02f87347f
+  testType30 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 81#) -}
+f7bd92d0031efe80ec8d0014b356baba
+  testType31 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 135#) -}
+43bf32c083fe089194249262fcf2b13e
+  testType32 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 134#) -}
+6db1fc22881c8881ba2db3a33a6fcea3
+  testType33 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (Main.testType66
+                         Main.testType65
+                         Main.testType63
+                         Main.testType62)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case (Main.testType56
+                         Main.testType55
+                         Main.testType53
+                         Main.testType46)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testType40 Main.testType39 Main.testType37 Main.testType34)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+a4b4d3130338adeca7d3e6f702b41097
+  testType34 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testType35) -}
+adeff255a90158d26e31a5e7ef097c57
+  testType35 :: Type.TypeDec
+  {- Unfolding: (Type.TApp Main.testType36) -}
+afe99603c995956f17636b4bc5ec4a00
+  testType36 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testType19
+                   Main.testType20) -}
+7f0e334dc895bbe9ed605794787ff90f
+  testType37 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testType_s2
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType38
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+b5a6f213e9bafa1e32ad70bbef3cc793
+  testType38 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testType_s2) -}
+b5e7281aff814e7fb29dc7056e17b379
+  testType39 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "nested app"#) -}
+7f65690939bac112f29b5ac5fca6c252
+  testType4 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testType5) -}
+49527e979c8056b4205b898f7e81b9ba
+  testType40 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType41
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+3b439125c5f447776db7147031c16737
+  testType41 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType42
+                   GHC.Stack.Types.EmptyCallStack) -}
+4038396f847be93331990e5d631dba65
+  testType42 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType45
+                   Main.testDec40
+                   Main.testType44
+                   Main.testType43) -}
+c2d15e63888a4934182cb45c6c34a349
+  testType43 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 76#) -}
+56b11f03e5268abee8184e58f442bf59
+  testType44 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 132#) -}
+966b1f3d45daa042110195e9759b37aa
+  testType45 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 131#) -}
+e923a4b611fd74e9259ff8d2f975e837
+  testType46 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testType47) -}
+8d9e457c02e2f79a943ac7f7b8ab308d
+  testType47 :: Type.TypeDec
+  {- Unfolding: (Type.TApp Main.testType48) -}
+f3d681f55181ead65b9585fe1e71866c
+  testType48 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDec28
+                   Main.testType49) -}
+dbf07823bb06e5fa53efcebeb85165e4
+  testType49 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testType22
+                   Main.testType50) -}
+4d0f00b4d4d0a3b8e850ecddc791ae60
+  testType5 :: Type.TypeDec
+  {- Unfolding: (Type.Params Main.testDec31 Main.testType6) -}
+9cbc63a1f180878894996091c39b007c
+  testType50 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testType51
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+200b3e906fd0734ca0b47ee2ba65d412
+  testType51 :: Type.TypeDec
+  {- Unfolding: (Type.Params
+                   Main.testType52
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+bc104771eb1dd55ee05d66140b931442
+  testType52 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "c"#) -}
+896c0f1a436ecf43b6b0130b7844e5a1
+  testType53 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testType_s3
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType54
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+a54d890e709d1b504a3381d1555a4df0
+  testType54 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testType_s3) -}
+acf44cfd9f2d414562c7f09d591de7db
+  testType55 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "more app"#) -}
+8ea65087604cbb524a489dc548aa76e3
+  testType56 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType57
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+185a26a99c8743cdad1196a2c72cf058
+  testType57 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType58
+                   GHC.Stack.Types.EmptyCallStack) -}
+741624acf2879eba7245c749682be477
+  testType58 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType61
+                   Main.testDec40
+                   Main.testType60
+                   Main.testType59) -}
+2314222f037701f978f0f86458449aa1
+  testType59 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 59#) -}
+cdae8f98747a170cbfd2d831b047a504
+  testType6 :: [Type.TypeDec]
+  {- Unfolding: (GHC.Types.:
+                   @ Type.TypeDec
+                   Main.testDec30
+                   (GHC.Types.[] @ Type.TypeDec)) -}
+13c6e9bf82b418278dcf45a7f7b1be11
+  testType60 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 130#) -}
+7b6e9785b5837bc3db35f2734b00052e
+  testType61 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 129#) -}
+0d2ffb9942d50cdd66dade49f9951993
+  testType62 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testType19) -}
+a95dbfe8fb5c5476ba406aff2973be8d
+  testType63 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testType_s4
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType64
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+a9628b9caf20a8a9dd2cb176de6f9822
+  testType64 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testType_s4) -}
+88c15782b7e279e677c47bdd19530fb0
+  testType65 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "app"#) -}
+618c78467dd319ac3645df6d203c76dc
+  testType66 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType67
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+0c8616bbfc115945e1594491f89acd2d
+  testType67 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType68
+                   GHC.Stack.Types.EmptyCallStack) -}
+885c81988e237b4b82f2243469fa2c37
+  testType68 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType71
+                   Main.testDec40
+                   Main.testType70
+                   Main.testType69) -}
+519512eee99a1641158edfb3161f378c
+  testType69 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 49#) -}
+c9edc421489c92c4b08af5bebcde959b
+  testType7 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testType_s
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType8
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+3f9fed279407fd3f24e44cc7a7f27178
+  testType70 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 128#) -}
+274e55ff54c63ec3340e2efb0db3a88e
+  testType71 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 127#) -}
+1c4c8f67f19a9d660b3a76369ff7a078
+  testType72 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case (Main.testType97
+                         Main.testType96
+                         Main.testType94
+                         Main.testType93)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case (Main.testType89
+                         Main.testType88
+                         Main.testType86
+                         Main.testType85)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (Main.testType79 Main.testType78 Main.testType76 Main.testType73)
+                   `cast`
+                 (GHC.Types.N:IO[0] <()>_R)
+                   ipv2 } }) -}
+f0093e779ad68414ef05f7b868f9ca25
+  testType73 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testType74) -}
+ae84058aa4eb2135c41637311d03e162
+  testType74 :: Type.TypeDec
+  {- Unfolding: (Type.Params Main.testType75 Main.testDecType25) -}
+3c4c296577e2b91575071193cd43000e
+  testType75 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Result"#) -}
+1b14d0bfabaae2a6b8286748c2d3827f
+  testType76 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testType_s5
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType77
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+3989a56801de0233471b9f3ddde9677f
+  testType77 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testType_s5) -}
+7ca85067e5840470df89f254753ffea4
+  testType78 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "multi param"#) -}
+c4499941cc30f15c8213f96c4c9289a2
+  testType79 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType80
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+9d53001b022f35fb849ecd9a153da6da
+  testType8 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testType_s) -}
+84f541dc3950fddbd81a4912c4597a58
+  testType80 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType81
+                   GHC.Stack.Types.EmptyCallStack) -}
+16c19cdf8ef50e5667a5e3f0b550447e
+  testType81 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType84
+                   Main.testDec40
+                   Main.testType83
+                   Main.testType82) -}
+d6cfa9533d4c10c4fadb391de98c501e
+  testType82 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 67#) -}
+a4ba146fe386622f2808a346c2e8d403
+  testType83 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 125#) -}
+f89b43d8fa08ac55164658079ca3b1b3
+  testType84 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 124#) -}
+3cf43698620dc924180fe1eccca36b3c
+  testType85 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testDec30) -}
+f3836560f7d910e590449b8e04382047
+  testType86 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testType_s6
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType87
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+258a2ad63721f2f36033d6ae28a8dd9d
+  testType87 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testType_s6) -}
+07be077e8e6e28645fec7849e1c8e1ab
+  testType88 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "param"#) -}
+f372b941e581b295a8ddeb933b261c0a
+  testType89 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType90
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+3ff7c1f705834d83e7eda4b6c7b7fbf8
+  testType9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "alternate nesting"#) -}
+0ffa2507d04191a7d9a23a4f1c86aee3
+  testType90 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType91
+                   GHC.Stack.Types.EmptyCallStack) -}
+6e4421fee06e020bcf0f99cded26c6c6
+  testType91 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType92
+                   Main.testDec40
+                   Main.testType92
+                   Main.testDecTypeAlias12) -}
+d381bcb1f23e3dc2342221709f6a67c1
+  testType92 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 123#) -}
+52843be1e821d15b535a20fc15a3bdda
+  testType93 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (Type.toDocT Main.testDec28) -}
+d1e4811239b51bfda14093e86c406054
+  testType94 :: Text.PrettyPrint.HughesPJ.Doc
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Main.testDec29
+                        0# of ww2 { DEFAULT ->
+                 (Text.PrettyPrint.Annotated.HughesPJ.TextBeside
+                    @ ()
+                    (Text.PrettyPrint.Annotated.HughesPJ.NoAnnot
+                       @ ()
+                       Main.testType95
+                       ww2)
+                    (Text.PrettyPrint.Annotated.HughesPJ.Empty @ ()))
+                   `cast`
+                 (Sym (Text.PrettyPrint.HughesPJ.N:Doc[0])) }) -}
+31df825ed618ada1ad4fde12566c72e0
+  testType95 :: Text.PrettyPrint.Annotated.HughesPJ.TextDetails
+  {- Unfolding: (Text.PrettyPrint.Annotated.HughesPJ.Str
+                   Main.testDec29) -}
+fe7bc441b36b51206e81130ec133f2a0
+  testType96 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "simple"#) -}
+643d9d0cb226fef46b7c6eaac7db414e
+  testType97 ::
+    GHC.Base.String
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Text.PrettyPrint.HughesPJ.Doc
+    -> Test.HUnit.Lang.Assertion
+  {- Unfolding: (Test.HUnit.Lang.assertEqual
+                   @ Text.PrettyPrint.HughesPJ.Doc
+                   Main.testType98
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0]
+                             <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                   Text.PrettyPrint.HughesPJ.$fEqDoc
+                   Text.PrettyPrint.HughesPJ.$fShowDoc) -}
+8fa1c404512f587d669ce78337366548
+  testType98 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Main.testDec45
+                   Main.testType99
+                   GHC.Stack.Types.EmptyCallStack) -}
+43429c5535152fe973812be50003ed8e
+  testType99 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Main.testDec44
+                   Main.testDec43
+                   Main.testDec42
+                   Main.testType100
+                   Main.testDec40
+                   Main.testType100
+                   Main.testDecTypeAlias24) -}
+f924ce12a81aae6602ce1bc6690115d5
+  testType_s :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "Maybe (Maybe a)"#) -}
+9d2fd0dd1d20aa648a43c6c97b4febb6
+  testType_s1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Maybe (a -> b) String"#) -}
+31f4c87d2a02f9af85ce3cae25e9518f
+  testType_s2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "(a -> b) -> a -> b"#) -}
+11ff6e7ec9f705bffca1a07001acba59
+  testType_s3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "a -> b -> c"#) -}
+220d952e97379c582cb8efaa731deaff
+  testType_s4 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "a -> b"#) -}
+9689d27e80a3856f0f63096275a61513
+  testType_s5 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "Result String Int"#) -}
+5f3d78d8938ff47c8954d12d99c749a9
+  testType_s6 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "Maybe a"#) -}
+cdc843e568a923349f286b476519eab2
+  tests :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests1) -}
+1be665948ca706babe409f4a4692833c
+  tests1 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests43
+                   Main.tests2) -}
+14713bcdec9753b008c2bf3a312a2d5f
+  tests10 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests14 Main.tests11) -}
+c0187c94813321d584fdeeafb73c72c6
+  tests11 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests12) -}
+42ffd3350b1ed2a917fc73174942029f
+  tests12 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testDec) -}
+7351edf80c352e3feafe67c513ecaf66
+  tests13 :: GHC.Types.IO () -> Test.HUnit.Base.Test
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ (x :: GHC.Types.IO ()) ->
+                 Test.HUnit.Base.TestCase
+                   (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                    x `cast` (GHC.Types.N:IO[0] <()>_R) eta)
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+e6dd4faa3a64a029bf74c620cd2ebd1a
+  tests14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test dec"#) -}
+74a758c7f7a321ca84eb4fd71d7daac5
+  tests15 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests18 Main.tests16) -}
+5967ed576d9b5f1991c2feabfc14c8c9
+  tests16 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests17) -}
+8c24a7bc45f5cbf483defe189672a4e3
+  tests17 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testDecType) -}
+467102dfcc690139c25b3ff05f86f121
+  tests18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test dec type"#) -}
+1ec58fe148c06d507927d1b6b40179c9
+  tests19 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests22 Main.tests20) -}
+9d4c49bf18c6b0f5199e37994aab37ed
+  tests2 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests39
+                   Main.tests3) -}
+878dce4e1f0cfb4863de8b86ee52f86c
+  tests20 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests21) -}
+bf21ce4242ea341bcc6062ef9bc79b93
+  tests21 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testDecTypeAlias) -}
+c4a2fed8c811caf985fc2386a7416d77
+  tests22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "test dec type alias"#) -}
+4b76c6765cc0d28ecb3cfe64c1330b7d
+  tests23 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests26 Main.tests24) -}
+6b1dce5d934107ebab3f7b8addd40674
+  tests24 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests25) -}
+18f4c25b9e2bde432fba7628e2c933a7
+  tests25 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testType) -}
+336e350dc55bc4b857273f9dd45d2162
+  tests26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test type"#) -}
+54b5f6b1336d4c56ab3e7283314f92d5
+  tests27 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests30 Main.tests28) -}
+af901a8087100ef9b45b679d9ca8f7f6
+  tests28 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests29) -}
+c1d6813ad157d43dc37eab839e1c0346
+  tests29 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testList) -}
+a1cbdab61fb3e81a55b6a1774b525f4a
+  tests3 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests35
+                   Main.tests4) -}
+635c523db6868461167309920d372bd2
+  tests30 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test list"#) -}
+fe1330e81bb2f8ba6b0b04c423e2d4b1
+  tests31 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests34 Main.tests32) -}
+6894d6ac2f981628971d6e8d601d1576
+  tests32 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests33) -}
+ac741c98059fd91b530b7a33df23cd4e
+  tests33 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testOp) -}
+1afa693bb432ba425f03647c299e6f2f
+  tests34 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test op"#) -}
+18f9332085c59f56c54ee700e96dc0d8
+  tests35 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests38 Main.tests36) -}
+dfa3979217de593f4761051e2b5d8181
+  tests36 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests37) -}
+3ed915ca14487854adf6b1f84df460a4
+  tests37 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testLet) -}
+9f3171bbaf85d43127daa24d713e957d
+  tests38 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test let"#) -}
+d93d34529d5bf48072cf7364d7c80949
+  tests39 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests42 Main.tests40) -}
+dcf35ebb695dd416fa5ceb0a5cd89bfa
+  tests4 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests31
+                   Main.tests5) -}
+77609323cc89f15cfabce3b8fcd1da7e
+  tests40 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests41) -}
+ef4d1b10d2d5d5a45a6418eec00aa0bd
+  tests41 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testCase) -}
+4841dd1f868a074b45db246bb89fddfd
+  tests42 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test case"#) -}
+1de03517ab1811e715bd03ef475acf55
+  tests43 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel Main.tests46 Main.tests44) -}
+161755f1bb1409cad9dafec8e62b94c4
+  tests44 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Main.tests45) -}
+8f7e673b653ea8cdd524b6f5ca5c0bc3
+  tests45 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Base.map
+                   @ (GHC.Types.IO ())
+                   @ Test.HUnit.Base.Test
+                   Main.tests13
+                   Main.testApp) -}
+74064d3ebe788ec9b72fb10fa70b2ffd
+  tests46 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "test var"#) -}
+d1f76626e939dbc3b513e479386050f1
+  tests5 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests27
+                   Main.tests6) -}
+6b1aef3a93b53cb4fb6b812007dc31d2
+  tests6 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests23
+                   Main.tests7) -}
+ae62568fca45c2160460192247664e91
+  tests7 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests19
+                   Main.tests8) -}
+695cf8764b251b358aa14733c38d4b48
+  tests8 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests15
+                   Main.tests9) -}
+ab754b9b983552703a4ba09db0b50324
+  tests9 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.tests10
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

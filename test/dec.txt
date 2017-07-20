@@ -1,0 +1,7 @@
+withDefault :: a -> Maybe a -> a
+withDefault default maybe =
+    case maybe of
+        Just data ->
+            data
+        Nothing ->
+            default
