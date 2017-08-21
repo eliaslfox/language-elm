@@ -1,4 +1,4 @@
-module Expression where
+module Elm.Expression where
 
 import Text.PrettyPrint hiding (Str)
 import Data.Maybe

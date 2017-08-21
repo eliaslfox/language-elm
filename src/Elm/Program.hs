@@ -1,10 +1,9 @@
-module Program where
+module Elm.Program where
 
-import Import
-import Decleration
+import Elm.Import
+import Elm.Decleration
 import Text.PrettyPrint
 import Data.String.Utils
-import Text.Regex
 import Data.List
 
 data Program = Program String ImportType [Import] [Dec]

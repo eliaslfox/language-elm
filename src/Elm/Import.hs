@@ -1,4 +1,4 @@
-module Import where
+module Elm.Import where
 
 import Text.PrettyPrint
 

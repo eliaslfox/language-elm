@@ -3,14 +3,13 @@
 module Main where
 
 import Test.HUnit
-import Expression
-import Type
-import Decleration
-import Import
-import Program
+import Elm.Expression
+import Elm.Type
+import Elm.Decleration
+import Elm.Import
+import Elm.Program
 import Text.PrettyPrint hiding (Str)
 import Control.Monad 
-import Data.String.Utils
 
 assertString :: String -> String -> String -> Assertion 
 assertString preface expected actual =

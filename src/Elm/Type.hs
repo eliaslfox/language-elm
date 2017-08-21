@@ -1,8 +1,7 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings #-} 
+module Elm.Type where
 
-module Type where
-
-import Expression
+import Elm.Expression
 import Text.PrettyPrint
 import Data.Maybe
 

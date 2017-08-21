@@ -1,7 +1,7 @@
-module Decleration where
+module Elm.Decleration where
 
-import Type
-import Expression
+import Elm.Type
+import Elm.Expression
 import Text.PrettyPrint
 
 data Dec
