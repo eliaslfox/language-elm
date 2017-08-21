@@ -1,5 +1,5 @@
 name:               language-elm
-version:            0.0.8.0
+version:            0.0.9.0
 synopsis:           Generate elm code
 description:        Generate elm code from an ast
 homepage:           https://github.com/eliaslfox/language-elm#readme
