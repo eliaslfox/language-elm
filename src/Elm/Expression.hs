@@ -1,24 +1,38 @@
+{-# OPTIONS_HADDOCK prune #-}
+
+-- | Used to declare expressions
 module Elm.Expression where
 
 import Text.PrettyPrint hiding (Str)
 import Data.Maybe
 
+-- | The expression type
 data Expr
+    -- | Function application
     = App String [Expr]
     | Case Expr [(Expr, Expr)]
     | Let Expr [(Expr, Expr)] 
     | List [Expr]
     | Tuple2 Expr Expr
     | Tuple3 Expr Expr Expr
+    -- | Inline operators
     | Op String Expr Expr
+    -- | Expressions wrapped in parens
     | Parens Expr
+    -- | String literals
     | Str String
+    -- | Integer literals
     | Int Int
+    -- | The underscore placeholder
     | Under
+    -- | Boolean false literal
     | BoolTrue
+    -- | Boolean true literal
     | BoolFalse
+    -- | Record creation and update syntax
     | Record (Maybe Expr) [(String, Expr)]
 
+-- | Shortcut for variables
 var :: String -> Expr
 var str = App str []
 

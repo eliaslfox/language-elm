@@ -1,17 +1,23 @@
+{-# OPTIONS_HADDOCK prune #-}
+
+-- | Ast for expressing imports
 module Elm.Import where
 
 import Text.PrettyPrint
 
+-- | Possible ways to expose an import
 data ImportType
     = Everything
     | Select [ImportItem]
     | ExposeNothing
 
+-- | Possible ways to expose a sub import
 data ImportItem 
     = Item String
     | ItemExposing String [String]
     | ItemEvery String
 
+-- | A full import
 data Import = Import String (Maybe String) ImportType
 
 docItem :: ImportItem -> Doc

@@ -1,12 +1,19 @@
+{-# OPTIONS_HADDOCK prune #-}
+
+-- | Top level declerations
 module Elm.Decleration where
 
 import Elm.Type
 import Elm.Expression
 import Text.PrettyPrint
 
+-- | Used to declare functions, variables, and types
 data Dec
+    -- | Declare a function
     = Dec String TypeDec [Expr] Expr
+    -- | Declare a type
     | DecType String [String] [(String, [TypeDec])]
+    -- | Declare a type alias
     | DecTypeAlias String [String] TypeDec
 
 toDocD :: Dec -> Doc

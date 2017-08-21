@@ -1,16 +1,25 @@
+{-# OPTIONS_HADDOCK prune #-}
 {-# LANGUAGE OverloadedStrings #-} 
+
+-- | Ast for declaring types
 module Elm.Type where
 
 import Elm.Expression
 import Text.PrettyPrint
 import Data.Maybe
 
+-- | Data type to represent types
 data TypeDec
+    -- | A type with type paramaters
     = Params String [TypeDec]
+    -- | A function type
     | TApp [TypeDec]
+    -- | A two tuple type
     | TTuple2 TypeDec TypeDec
+    -- | A record type
     | TRecord (Maybe String) [(String, TypeDec)]
 
+-- | Shortcut for declaring a type variable
 tvar :: String -> TypeDec
 tvar str =
     Params str []

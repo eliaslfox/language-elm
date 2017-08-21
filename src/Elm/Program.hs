@@ -1,3 +1,6 @@
+{-# OPTIONS_HADDOCK prune #-}
+
+-- | Module for creating a program
 module Elm.Program where
 
 import Elm.Import
@@ -6,6 +9,7 @@ import Text.PrettyPrint
 import Data.String.Utils
 import Data.List
 
+-- | Program type
 data Program = Program String ImportType [Import] [Dec]
 
 genProgram :: Program -> Doc
@@ -14,6 +18,7 @@ genProgram (Program name exports imports declerations) =
     $+$ (foldl ($+$) empty . map toDocI $ imports)
     $+$ (foldl ($+$) empty . map toDocD $ declerations)
 
+-- | Convert a program to a string of code
 renderProgram :: Program -> String
 renderProgram program =
     let 
