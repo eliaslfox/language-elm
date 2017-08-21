@@ -3,11 +3,7 @@
 module Main where
 
 import Test.HUnit
-import Elm.Expression
-import Elm.Type
-import Elm.Decleration
-import Elm.Import
-import Elm.Program
+import Elm
 import Text.PrettyPrint hiding (Str)
 import Control.Monad 
 
