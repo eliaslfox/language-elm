@@ -18,7 +18,7 @@ import Elm.Type
 
 Declare a program type
 ```haskell
-program :: Program
+program : Program
 program =
     Program
         "Tuple"

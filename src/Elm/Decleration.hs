@@ -20,7 +20,7 @@ toDocD :: Dec -> Doc
 toDocD dec =
     case dec of
         Dec str typeDec args body ->
-               text str <+> text "::" <+> toDocT typeDec $+$
+               text str <+> text ":" <+> toDocT typeDec $+$
                hang (text str <+> (hsep . map toDoc $ args) <+> text "=") 4 (toDoc body)
 
         DecTypeAlias str typeParams t->
