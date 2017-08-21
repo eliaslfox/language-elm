@@ -15,8 +15,12 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Expression, Decleration, Type
-  build-depends:       base >= 4.7 && < 5, HUnit >= 1 && < 2, pretty
+  exposed-modules:     Expression, Decleration, Type, Import, Program
+  build-depends:       base >= 4.7 && < 5, 
+                       HUnit >= 1 && < 2, 
+                       pretty,
+                       MissingH,
+                       regex-compat
   default-language:    Haskell2010
 
 executable language-elm-exe
@@ -35,6 +39,7 @@ test-suite language-elm-test
                      , language-elm
                      , HUnit
                      , pretty
+                     , MissingH
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 

@@ -1,10 +1,24 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
 import Test.HUnit
 import Expression
 import Type
 import Decleration
+import Import
+import Program
 import Text.PrettyPrint hiding (Str)
+import Control.Monad 
+import Data.String.Utils
+
+assertString :: String -> String -> String -> Assertion 
+assertString preface expected actual =
+  unless (actual == expected) (assertFailure msg)
+   where msg = (if null preface then "" else preface ++ "\n") ++
+                "expected:\n\n" ++ expected ++ "\n but got:\n\n" ++ actual ++
+                "\n" ++ (show . length $ expected) ++ " - "
+                ++ (show . length $ actual)
 
 testRender ast =
     (render . toDoc $ ast) ++ "\n"
@@ -117,6 +131,15 @@ testList =
             (toDoc $ List [Int 1, Int 2, Int 3])
     ]
 
+testRecord =
+    [ do
+        assertEqual "empty" (text "{}") (toDoc $ Record Nothing [])
+        assertEqual "no sets" (text "a") (toDoc $ Record (Just $ var "a") [])
+        assertEqual "some stuff"
+            (text "{ a | b = 5 }")
+            (toDoc $ Record (Just $ var "a") [("b", Int 5)])
+    ]
+
 testType =
     [ do
         assertEqual "simple" (text "a") (toDocT $ tvar "a")
@@ -135,6 +158,14 @@ testType =
             (toDocT $ Params "Maybe" [TApp [tvar "a", tvar "b"], tvar "String"])
         assertEqual "alternate nesting" (text "Maybe (Maybe a)")
             (toDocT $ Params "Maybe" [Params "Maybe" [tvar "a"]])
+    , do
+        assertEqual "record types" (text "{}") (toDocT $ TRecord Nothing [])
+        assertEqual "memier record types"
+            (text "{ a : Int, b : Int }")
+            (toDocT $ TRecord Nothing [("a", tvar "Int"), ("b", tvar "Int")])
+        assertEqual "the dankest rarest memes"
+            (text "{ a | b : Int }")
+            (toDocT $ TRecord (Just "a") [("b", tvar "Int")])
     ]
 
 testDec =
@@ -180,6 +211,100 @@ testDecTypeAlias =
             (toDocD $ DecTypeAlias "Duple" ["a"] $ TTuple2 (tvar "a") (tvar "a"))
     ]
 
+testImport =
+    [ do
+        assertEqual "wut" (text "import List") (toDocI $ Import "List" Nothing ExposeNothing)
+        assertEqual "wut" (text "import List as L") (toDocI $ Import "List" (Just "L") ExposeNothing)
+        assertEqual "wut" (text "import List exposing (map)") (toDocI $ Import "List" Nothing $ Select [Item "map"])
+        assertEqual "wut" (text "import List as L exposing (map)")
+            (toDocI $ Import "List" (Just "L") $ Select [Item "map"])
+        assertEqual "wut" (text "import List exposing (List(..))")
+            (toDocI $ Import "List" Nothing $ Select [ItemEvery "List"])
+        assertEqual "wut" (text "import List exposing (List(Cons))")
+            (toDocI $ Import "List" Nothing $ Select [ItemExposing "List" ["Cons"]])
+    ]
+
+testProgram =
+    [ do
+        file <- readFile "test/program1.elm"
+
+        let
+            ast =
+                Program
+                    "Maybe"
+                    (Select 
+                        [ ItemExposing "Maybe" ["Just", "Nothing"]
+                        , Item "andThen"
+                        , Item "map"
+                        , Item "map2"
+                        , Item "map3"
+                        , Item "map4"
+                        , Item "map5"
+                        , Item "withDefault"
+                        ])
+
+                   []
+                   [ DecType "Maybe" ["a"] [ ("Nothing", []), ("Just", [tvar "a"]) ]
+                   , Dec "withDefault" 
+                        (TApp [tvar "a", Params "Maybe" [tvar "a"], tvar "a"])
+                        [var "default", var "maybe"] 
+                        (Case (var "maybe")
+                        [ (App "Just" [var "value"], var "value")
+                        , (var "Nothing", var "default")
+                        ])
+                   , Dec "map"
+                        (TApp 
+                            [ TApp [tvar "a", tvar "b"]
+                            , Params "Maybe" [tvar "a"]
+                            , Params "Maybe" [tvar "b"]
+                            ])
+                        [var "f", var "maybe"]
+                        (Case (var "maybe")
+                            [ (App "Just" [var "value"], App "Just" [App "f" [var "value"]])
+                            , (var "Nothing", var "Nothing")
+                            ])
+                    , Dec "map2"
+                        (TApp
+                            [ TApp [tvar "a", tvar "b", tvar "value"]
+                            , Params "Maybe" [tvar "a"]
+                            , Params "Maybe" [tvar "b"]
+                            , Params "Maybe" [tvar "value"]
+                            ])
+                        [var "func", var "ma", var "mb"]
+                        (Case (Tuple2 (var "ma") (var "mb"))
+                            [ (Tuple2 (App "Just" [var "a"]) (App "Just" [var "b"])
+                                , App "Just" [App "func" [var "a", var "b"]])
+                            , (var "_", var "Nothing")
+                            ])
+                   , Dec "map3"
+                        (TApp
+                            [ TApp 
+                                [ tvar "a"
+                                , tvar "b"
+                                , tvar "c"
+                                , tvar "value"
+                                ]
+                            , Params "Maybe" [tvar "a"]
+                            , Params "Maybe" [tvar "b"]
+                            , Params "Maybe" [tvar "c"]
+                            , Params "Maybe" [tvar "value"]
+                            ])
+                        [var "func", var "ma", var "mb", var "mc"]
+                        (Case (Tuple3 (var "ma") (var "mb") (var "mc"))
+                            [ (Tuple3
+                                (App "Just" [var "a"])
+                                (App "Just" [var "b"])
+                                (App "Just" [var "c"]),
+                              (App "Just" [App "func" [var "a", var "b", var "c"]]))
+                            , (var "_", var "Nothing")
+                            ]
+                        )
+                        
+
+                   ]
+        Main.assertString "meh" file $ renderProgram ast
+    ]
+
 tests = 
     TestList 
         [ "test var" ~: testApp
@@ -187,10 +312,13 @@ tests =
         , "test let" ~: testLet
         , "test op" ~: testOp
         , "test list" ~: testList
+        , "test record" ~: testRecord
         , "test type" ~: testType
         , "test dec type alias" ~: testDecTypeAlias
         , "test dec type" ~: testDecType
         , "test dec" ~: testDec
+        , "test import" ~: testImport
+        , "test program" ~: testProgram
         ]
 
 main :: IO Counts

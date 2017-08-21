@@ -1,12 +1,16 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Type where
 
 import Expression
 import Text.PrettyPrint
+import Data.Maybe
 
 data TypeDec
     = Params String [TypeDec]
     | TApp [TypeDec]
     | TTuple2 TypeDec TypeDec
+    | TRecord (Maybe String) [(String, TypeDec)]
 
 tvar :: String -> TypeDec
 tvar str =
@@ -18,6 +22,9 @@ vopTApp t =
         Params str types ->
             toDocT $ Params str types
             
+        TRecord main decs ->
+            toDocT $ TRecord main decs
+
         _ ->
             parens $ toDocT t
 
@@ -42,3 +49,20 @@ toDocT t =
             
         TTuple2 t1 t2 ->
             lparen <> toDocT t1 <> comma <+> toDocT t2 <> rparen
+
+        TRecord Nothing [] ->
+            "{}"
+
+        TRecord (Just main) [] ->
+            text main
+
+        TRecord main decs ->
+            let
+                front = fmap (\x -> text x <+> "|") main
+            in
+                "{" <+> Data.Maybe.fromMaybe empty front
+                <+> (hsep . punctuate "," . map docDec $ decs)
+                <+>  "}"
+            where 
+                docDec (name, dec) =
+                    text name <+> ":" <+> toDocT dec
