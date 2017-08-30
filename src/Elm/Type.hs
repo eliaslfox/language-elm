@@ -5,6 +5,7 @@
 module Elm.Type where
 
 import Elm.Expression
+import Elm.Classes
 import Text.PrettyPrint
 import Data.Maybe
 
@@ -19,10 +20,8 @@ data TypeDec
     -- | A record type
     | TRecord (Maybe String) [(String, TypeDec)]
 
--- | Shortcut for declaring a type variable
-tvar :: String -> TypeDec
-tvar str =
-    Params str []
+instance Var TypeDec where
+    var name = Params name [] 
 
 vopTApp :: TypeDec -> Doc
 vopTApp t =

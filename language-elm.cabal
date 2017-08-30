@@ -15,20 +15,24 @@ cabal-version:      >=1.10
 
 library
   hs-source-dirs:   src
-  exposed-modules:    Elm.Decleration, Elm.Expression, Elm.Import, Elm.Program, Elm.Type
+  exposed-modules:    Elm.Decleration, Elm.Expression, Elm.Import, Elm.Program, Elm.Type, Elm.Classes, Elm.ParseError
   build-depends:    base >= 4.7 && < 5, 
                        pretty,
-                       MissingH
+                       MissingH,
+                       mtl
   default-language: Haskell2010
 
 test-suite language-elm-test
   type:             exitcode-stdio-1.0
   hs-source-dirs:   test
   main-is:          Spec.hs
+  other-modules:    Renderer
   build-depends:    base
                      , language-elm
                      , HUnit
                      , pretty
+                     , hspec
+                     , mtl
   ghc-options:      -threaded -rtsopts -with-rtsopts=-N
   default-language: Haskell2010
 

@@ -1,5 +1,0 @@
-case (a, b) of
-    (1, 2) ->
-        True
-    _ ->
-        False

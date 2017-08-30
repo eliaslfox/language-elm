@@ -3,9 +3,9 @@
 -- | Top level declerations
 module Elm.Decleration where
 
-import Elm.Type
-import Elm.Expression
-import Text.PrettyPrint
+import           Elm.Expression
+import           Elm.Type
+import           Text.PrettyPrint
 
 -- | Used to declare functions, variables, and types
 data Dec
@@ -15,6 +15,8 @@ data Dec
     | DecType String [String] [(String, [TypeDec])]
     -- | Declare a type alias
     | DecTypeAlias String [String] TypeDec
+
+toDoc = undefined
 
 toDocD :: Dec -> Doc
 toDocD dec =

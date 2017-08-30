@@ -1,5 +1,0 @@
-case m of
-    Just data ->
-        data
-    Nothing ->
-        ""

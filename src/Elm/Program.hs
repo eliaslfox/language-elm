@@ -27,7 +27,7 @@ renderProgram program =
         join "\n" . map addNewline . split "\n" $ str
     where
         addNewline line =
-            if (or $ map (\s -> isInfixOf s line) ["::", "type"]) then
+            if (or $ map (\s -> isInfixOf s line) [":", "type"]) then
                 "\n" ++ line
             else
                 line

@@ -1,126 +1,209 @@
 {-# OPTIONS_HADDOCK prune #-}
+{-# OPTIONS_GHC -Wall -Werror #-}
+{-# LANGUAGE OverloadedLists   #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE Trustworthy       #-}
+{-# LANGUAGE TypeFamilies      #-}
 
 -- | Used to declare expressions
-module Elm.Expression where
+module Elm.Expression (Expr(..)) where
 
-import Text.PrettyPrint hiding (Str)
-import Data.Maybe
+import           Control.Monad.Writer (tell)
+import           Data.String          (IsString (..))
+import           Elm.Classes          (Generate (..))
+import           Elm.ParseError       (GenError (..))
+import           GHC.Exts             (IsList (..))
+import           Text.PrettyPrint     hiding (Str)
 
 -- | The expression type
 data Expr
-    -- | Function application
-    = App String [Expr]
-    | Case Expr [(Expr, Expr)]
-    | Let Expr [(Expr, Expr)] 
-    | List [Expr]
-    | Tuple2 Expr Expr
-    | Tuple3 Expr Expr Expr
-    -- | Inline operators
-    | Op String Expr Expr
-    -- | Expressions wrapped in parens
-    | Parens Expr
-    -- | String literals
+    {-
+      Constants
+    -}
+    -- | A boolean literal
+    = Bool Bool
+    -- | A string literal
     | Str String
-    -- | Integer literals
+    -- | An integer literal
     | Int Int
-    -- | The underscore placeholder
+    -- | A float literal
+    | Float Float
+    -- | An underscore variable placeholder
     | Under
-    -- | Boolean false literal
-    | BoolTrue
-    -- | Boolean true literal
-    | BoolFalse
-    -- | Record creation and update syntax
+
+    {-
+      Inline
+    -}
+    -- | A variable
+    | Var String
+    -- | Function application, the tail is applied to the head
+    | App [Expr]
+    -- | A list of expressions
+    | List [Expr]
+    -- | Apply an inline operator to two expressions
+    | Op String Expr Expr
+    -- | A tuple of expressions
+    | Tuple [Expr]
+    -- | A record, the first paramater is an optional record to update from
     | Record (Maybe Expr) [(String, Expr)]
 
--- | Shortcut for variables
-var :: String -> Expr
-var str = App str []
+    {-
+      Multi Line
+    -}
+    -- | A let expression
+    | Let Expr [(Expr, Expr)]
+    -- | A case expression
+    | Case Expr [(Expr, Expr)]
 
--- Takes an expression
--- if its a single variable or tuple then id
--- else wrap it in parens
-vop :: Expr -> Doc
-vop expr =
-    case expr of
-        App str [] ->
-            text str
+    {-
+      Util
+    -}
+    -- | Wrap an expression in parens, should be mostly automatic
+    | Parens Expr
 
-        Tuple2 exp1 exp2 ->
-            toDoc $ Tuple2 exp1 exp2
+-- | Allows creating variables with overloaded strings
+instance IsString Expr where
+    fromString = Var
 
-        Tuple3 expr1 expr2 expr3 ->
-            toDoc $ Tuple3 expr1 expr2 expr3
+-- | Allows creating lists with overloaded lists
+instance IsList Expr where
+    type Item Expr = Expr
+    fromList = List
+    toList = error "toList is not defined on expressions"
 
+instance Generate Expr where
+    generate expr = case expr of
+        Var str -> do
+            if str == "" then
+                tell $ Error "An empty string is not a valid variable name"
+            else
+                return ()
+            return $ text str
+        App [] -> do
+            -- I don't think this has a valid meaning
+            tell $ Error "Invalid syntax, trying to apply nothing"
+            return $ text ""
+        App [expr'] ->
+            generate expr'
+        App exprs -> do
+            -- If only I could understand my own code :(
+            docs <- sequence . map vop $ exprs
+            return . hsep $ docs
+        Tuple items -> do
+            if length items > 9 then
+                tell $ Error "Length of tuple is too long"
+            else if length items > 7 then
+                tell $ WarningList ["Tuples of length longer than seven are not comparable"]
+            else
+                -- Stack overflow says this is a noop
+                -- Seems legit *shrug*
+                return ()
+            docs <- sequence . map generate $ items
+            return . parens . hsep . punctuate "," $ docs
         Str str ->
-            doubleQuotes $ text str
-
-        Record a b ->
-            toDoc $ Record a b
-
-        other ->
-            parens $ toDoc other
-
-toDoc :: Expr -> Doc
-toDoc expr =
-    case expr of
-        App str exprs ->
-            text str <+> (hsep . map vop $ exprs)
-
-        Tuple2 expr1 expr2 ->
-            parens $ toDoc expr1 <> comma <+> toDoc expr2
-
-        Tuple3 expr1 expr2 expr3 ->
-            parens $ toDoc expr1 <> comma <+> toDoc expr2 <> comma <+> toDoc expr3
-
-        Str str ->
-            doubleQuotes . text $ str
-
-        Op op expr1 expr2 ->
-           vop expr1 <+> text op <+> vop expr2 
-
-        Case expr exprs ->
-            hang (text "case" <+> vop expr <+> text "of") 4 (vcat . map caseToDoc $ exprs)
-
-            where
-                caseToDoc (expr1, expr2) =
-                    toDoc expr1 <+> text "->" $$ (nest 4 $ toDoc expr2)
-
-
-        List exprs ->
-            char '[' <> (hsep . punctuate (text ",") . map toDoc $ exprs) <> char ']'
-
-        Let expr exprs ->
-            text "let" $+$ (nest 4 . vcat . map letToDoc $ exprs) $+$ text "in" $+$ (nest 4 $ toDoc expr)
-              
-            where
-                letToDoc (expr1, expr2) =
-                    toDoc expr1 <+> char '=' <+> toDoc expr2
-
-        Int i ->
-            int i
-
+            return . doubleQuotes . text $ str
+        Op op expr1 expr2 -> do
+           doc1 <- vop expr1
+           doc2 <- vop expr2
+           return $ doc1 <+> text op <+> doc2
+        Case _ [] -> do
+            tell $ Error "Unable to create case expression with 0 cases"
+            return ""
+        Case value options -> do
+            docValue <- generate value
+            optionsList <- genCaseList options
+            return $ "case" <+> docValue <+> "of" $+$ nest 4 optionsList
+        List items -> do
+            docs <- sequence . map generate $ items
+            return . brackets . hsep . punctuate "," $ docs
+        Let _ [] -> do
+            tell $ Error "Unable to create let expression with 0 bindings"
+            return ""
+        Let value bindings -> do
+            bindingsList <- genLetList bindings
+            valueDoc <- generate value
+            return $ "let" $+$ nest 4 bindingsList $+$ "in" $+$ nest 4 valueDoc
+        Int val -> do
+            if val > 9007199254740991 then
+                -- I would love for someone, somewhere, to get this warning
+                tell $ WarningList ["The number " ++ show val ++ " is larger than the largest safe number in js"]
+            else
+                return ()
+            return . int $ val
+        Float val -> do
+            if val > 9007199254740991 then
+                tell $ WarningList ["The number " ++ show val ++ " is larger that the largest safe number in js"]
+            else
+                return ()
+            return . float $ val
         Under ->
-            char '_'
-
-        BoolTrue ->
-            text "True"
-
-        BoolFalse ->
-            text "False"
-
+            return . char $ '_'
+        Bool bool ->
+            if bool then
+                return . text $ "True"
+            else
+                return . text $ "False"
         Record Nothing [] ->
-            text "{}"
+            return "{}"
+        Record (Just (Var str)) [] -> do
+            -- tbh, what would you even be trying to do?
+            tell $ WarningList ["Trying to update record " ++ str ++ " with no changed fields"]
+            return . text $ str
+        Record (Just (Var str)) updates -> do
+            list <- genRecordList updates
+            return $ lbrace <+> text str <+> "|" <+> list <+> rbrace
+        Record (Just _)  _ -> do
+            -- This seems to be how it is
+            tell $ Error "You are unable to update a record with a non constant"
+            return ""
+        Record Nothing updates -> do
+            list <- genRecordList updates
+            return $ lbrace <+> list <+> rbrace
+        Parens expr' -> do
+            doc <- generate expr'
+            return . parens $ doc
+        where
+            -- Generates the list of key value pairs in a record
+            genRecordList updates = do
+                let (keys, values) = unzip updates
+                let docKeys = map text keys
+                docValues <- sequence . map generate $ values
+                return . hsep . punctuate "," . map (\(a, b) -> a <+> "=" <+> b) $ zip docKeys docValues
 
-        Record (Just main) [] ->
-            toDoc main
+            -- Generates the list of declerations in a let expression
+            genLetList bindings = do
+                let (keys, values) = unzip bindings
+                docKeys <- sequence . map generate $ keys
+                docValues <- sequence . map generate $ values
+                return . vcat . map (\(a, b) -> a <+> "=" <+> b) $ zip docKeys docValues
 
-        Record main parts ->
-            let
-                front = fmap (\x -> toDoc x <+> char '|') main
-            in
-               char '{' <+> (Data.Maybe.fromMaybe empty front)
-               <+> nest 4 (hsep . punctuate (char ',') . map docPart $ parts)
-               <+> char '}'
-            where
-                docPart (name, value) =
-                    text name <+> char '=' <+> toDoc value
+            -- Generates the list of cases in a case statement
+            genCaseList options = do
+                let (keys, values) = unzip options
+                docKeys <- sequence . map generate $ keys
+                docValues <- sequence . map generate $ values
+                return . vcat . map (\(a, b) -> a <+> "->"$+$ nest 4 b) $ zip docKeys docValues
+
+            -- takes an expression and wraps it in parens
+            -- if required for nesting it in another expression
+            vop expr' =
+                case expr' of
+                Var _ ->
+                    generate expr'
+                Tuple _ ->
+                    generate expr'
+                List _ ->
+                    generate expr'
+                Int _ ->
+                    generate expr'
+                Float _ ->
+                    generate expr'
+                Under ->
+                    generate expr'
+                Str _ ->
+                    generate expr'
+                Record _ _ ->
+                    generate expr'
+                _ -> do
+                    doc <- generate expr'
+                    return . parens $ doc

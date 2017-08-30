@@ -1,7 +1,0 @@
-case color of
-    Red ->
-        "red"
-    Blue ->
-        "blue"
-    Green ->
-        "green"

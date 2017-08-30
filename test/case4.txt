@@ -1,5 +1,0 @@
-case (f x) of
-    True ->
-        "true"
-    False ->
-        "false"
