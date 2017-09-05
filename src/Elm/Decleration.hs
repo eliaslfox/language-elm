@@ -17,6 +17,8 @@ data Dec
     | DecTypeAlias String [String] TypeDec
 
 toDoc = undefined
+toDocT = undefined
+vopParam = undefined
 
 toDocD :: Dec -> Doc
 toDocD dec =

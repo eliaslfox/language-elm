@@ -1,13 +1,16 @@
 {-# OPTIONS_HADDOCK prune #-}
-{-# LANGUAGE OverloadedStrings #-} 
+{-# LANGUAGE OverloadedStrings #-}
 
 -- | Ast for declaring types
 module Elm.Type where
 
-import Elm.Expression
-import Elm.Classes
-import Text.PrettyPrint
-import Data.Maybe
+import           Control.Monad.Writer (tell)
+import           Data.List            (intersperse)
+import           Data.Maybe
+import           Elm.Classes
+import           Elm.Expression
+import           Elm.ParseError
+import           Text.PrettyPrint
 
 -- | Data type to represent types
 data TypeDec
@@ -15,61 +18,71 @@ data TypeDec
     = Params String [TypeDec]
     -- | A function type
     | TApp [TypeDec]
-    -- | A two tuple type
-    | TTuple2 TypeDec TypeDec
+    -- | A tuple type
+    | TTuple [TypeDec]
     -- | A record type
     | TRecord (Maybe String) [(String, TypeDec)]
 
 instance Var TypeDec where
-    var name = Params name [] 
+    var name = Params name []
 
-vopTApp :: TypeDec -> Doc
-vopTApp t =
-    case t of
-        Params str types ->
-            toDocT $ Params str types
-            
-        TRecord main decs ->
-            toDocT $ TRecord main decs
+instance Generate TypeDec where
+    generate typeDec =
+        case typeDec of
+             Params type_ params -> do
+                 docParams <- mapM vopParam params
+                 return $ text type_ <+> hsep docParams
 
-        _ ->
-            parens $ toDocT t
+             TApp decs -> do
+                 docDecs <- mapM vopTApp decs
+                 return . hsep . intersperse "->" $ docDecs
 
-vopParam :: TypeDec -> Doc
-vopParam t =
-    case t of
-        Params str [] ->
-            text str
+             TTuple [] -> do
+                return "()"
 
-        _ ->
-            parens $ toDocT t
-        
+             TTuple [item] -> do
+                 tell $ WarningList ["Attempt to create a one item tuple"]
+                 parens <$> generate item
+             TTuple items -> do
+                 docItems <- mapM generate items
+                 return . parens . hsep . punctuate "," $ docItems
 
-toDocT :: TypeDec -> Doc
-toDocT t =
-    case t of
-        Params p decs ->
-            text p <+> (hsep . map vopParam $ decs)
+             TRecord Nothing [] -> do
+                 tell $ Error "Unable to create a record type with no base and no constraints"
+                 return ""
 
-        TApp types ->
-            hsep . punctuate (text " ->") . map vopTApp $ types
-            
-        TTuple2 t1 t2 ->
-            lparen <> toDocT t1 <> comma <+> toDocT t2 <> rparen
+             TRecord (Just str) [] -> do
+                 tell $ WarningList ["You are creating a record type from " ++ str ++ " with no constraints"]
+                 return . text $ str
 
-        TRecord Nothing [] ->
-            "{}"
+             TRecord Nothing constraints -> do
+                 cDoc <- generateTRecordList constraints
+                 return $ lbrace <+> cDoc <+> rbrace
 
-        TRecord (Just main) [] ->
-            text main
+             TRecord (Just str) constraints -> do
+                 cDoc <- generateTRecordList constraints
+                 return $ lbrace <+> text str <+> text "|" <+> cDoc <+> rbrace
 
-        TRecord main decs ->
-            let
-                front = fmap (\x -> text x <+> "|") main
-            in
-                "{" <+> Data.Maybe.fromMaybe empty front
-                <+> (hsep . punctuate "," . map docDec $ decs)
-                <+>  "}"
-            where 
-                docDec (name, dec) =
-                    text name <+> ":" <+> toDocT dec
+        where
+            generateTRecordList constraints = do
+                let (keys, values) = unzip constraints
+                let docKeys = map text keys
+                docValues <- mapM generate values
+                let docList = zip docKeys docValues
+                return . hsep . punctuate "," . map (\(a, b) -> a <+> ":" <+> b) $ docList
+
+            vopParam type_ =
+                case type_ of
+                     Params str [] ->
+                         return . text $ str
+
+                     _ ->
+                         parens <$> generate type_
+
+            vopTApp type_ =
+                case type_ of
+                     TApp _ ->
+                         parens <$> generate type_
+
+                     _ ->
+                         generate type_

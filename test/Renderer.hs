@@ -1,17 +1,28 @@
 module Renderer where
 
-import Elm.Expression
-import Elm.ParseError
-import Elm.Classes
-import Text.PrettyPrint
-import Control.Monad.Writer
+import           Control.Monad.Writer
+import           Elm.Classes
+import           Elm.Expression
+import           Elm.ParseError
+import           Text.PrettyPrint
 
 renderExpr :: Expr -> String
-renderExpr expr = 
+renderExpr expr =
     let
         (doc, err) = runWriter . generate $ expr
     in
         if err == WarningList [] then
-            render doc 
+            Text.PrettyPrint.render doc
         else
-            error $ "Generation Error: " ++ show err 
+            error $ "Generation Error: " ++ show err
+
+
+render :: (Generate a) => a -> String
+render expr =
+    let
+        (doc, err) = runWriter . generate $ expr
+    in
+        if err == WarningList [] then
+             Text.PrettyPrint.render doc
+        else
+            error $ "Generation Error: " ++ show err

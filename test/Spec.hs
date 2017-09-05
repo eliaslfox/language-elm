@@ -5,9 +5,10 @@ import           Control.Monad.Writer
 import           Elm.Classes
 import           Elm.Expression
 import           Elm.ParseError
+import           Elm.Type
 import           Renderer
 import           Test.Hspec
-import           Text.PrettyPrint     hiding (Str)
+import           Text.PrettyPrint     hiding (Str, render)
 
 main = hspec $ do
     describe "Setup" $ do
@@ -120,3 +121,70 @@ main = hspec $ do
                     ast = Case "m" []
                 (runWriter . generate $ ast)
                     `shouldBe` ("", Error "Unable to create case expression with 0 cases")
+
+    describe "Type" $ do
+        describe "Params" $ do
+            it "Should work for without params" $ do
+                render (Params "a" [])
+                    `shouldBe` "a"
+            it "Should work with params" $ do
+                render (Params "a" [Params "b" []])
+                    `shouldBe` "a b"
+            it "Should put params in parens if needed" $ do
+                render (Params "a" [Params "b" [Params "c" []]])
+                    `shouldBe` "a (b c)"
+
+        describe "TApp" $ do
+            it "Should work" $ do
+                render (TApp [Params "a" [], Params "b" []])
+                    `shouldBe` "a -> b"
+
+            it "Should put nested tapps in parens" $ do
+                render (TApp [Params "a" [], TApp [Params "a" [], Params "b" []]])
+                    `shouldBe` "a -> (a -> b)"
+
+        describe "TTuple" $ do
+            it "Should work for unit" $ do
+                render (TTuple []) `shouldBe` "()"
+
+            it "Should return the value and warn with a one item tuple" $ do
+                let
+                    ast =
+                        TTuple [Params "a" []]
+                (runWriter . generate $ ast)
+                    `shouldBe` ("(a)", WarningList ["Attempt to create a one item tuple"])
+            it "Should work for multiple item tuples" $ do
+                render (TTuple [Params "a" [], Params "b" []])
+                    `shouldBe` "(a, b)"
+
+        describe "TRecord" $ do
+            it "Should error when passed nothing" $ do
+                let
+                    ast =
+                        TRecord Nothing []
+                (runWriter . generate $ ast)
+                    `shouldBe` ("", Error "Unable to create a record type with no base and no constraints")
+
+            it "Should warn when there are no constraints" $ do
+                let
+                    ast =
+                        TRecord (Just "a") []
+                (runWriter . generate $ ast)
+                    `shouldBe` ("a", WarningList ["You are creating a record type from a with no constraints"])
+            it "Should work with no base" $ do
+                let
+                    ast =
+                        TRecord Nothing
+                            [ ("a", Params "Int" [])
+                            , ("b", Params "Int" [])
+                            ]
+                render ast `shouldBe` "{ a : Int, b : Int }"
+
+            it "Should work with a base" $ do
+                let
+                    ast =
+                        TRecord (Just "a")
+                            [ ("b", Params "Int" [])
+                            , ("c", Params "Int" [])
+                            ]
+                render ast `shouldBe` "{ a | b : Int, c : Int }"
