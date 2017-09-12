@@ -1,10 +1,12 @@
-{-# LANGUAGE OverloadedLists   #-}
 {-# LANGUAGE OverloadedStrings #-}
 
 import           Control.Monad.Writer
 import           Elm.Classes
+import           Elm.Decleration
 import           Elm.Expression
+import           Elm.Import
 import           Elm.ParseError
+import           Elm.Program
 import           Elm.Type
 import           Renderer
 import           Test.Hspec
@@ -35,8 +37,8 @@ main = hspec $ do
             it "Should work for 0 tuples" $ do
                 renderExpr (Tuple []) `shouldBe` "()"
             it "Should work for larger tuples" $ do
-                renderExpr (Tuple [Int 5, Int 6]) `shouldBe` "(5, 6)"
-                renderExpr (Tuple [Int 2, Float 2.5]) `shouldBe` "(2, 2.5)"
+                renderExpr (Tuple [Int 5, Int 6]) `shouldBe` "( 5, 6 )"
+                renderExpr (Tuple [Int 2, Float 2.5]) `shouldBe` "( 2, 2.5 )"
         describe "Var" $ do
             it "Should work" $ do
                 renderExpr (Var "a") `shouldBe` "a"
@@ -63,7 +65,7 @@ main = hspec $ do
             it "Should work for multi item lists" $ do
                 renderExpr (List ["a", "b", "c"]) `shouldBe` "[a, b, c]"
             it "Should work with overloaded lists" $ do
-                renderExpr ["a", "b", "c"] `shouldBe` "[a, b, c]"
+                renderExpr (List ["a", "b", "c"]) `shouldBe` "[a, b, c]"
         describe "Function Application" $ do
             it "Should work for 0 params" $ do
                 renderExpr (App ["a"]) `shouldBe` "a"
@@ -188,3 +190,143 @@ main = hspec $ do
                             , ("c", Params "Int" [])
                             ]
                 render ast `shouldBe` "{ a | b : Int, c : Int }"
+    describe "Import" $ do
+        describe "ImportItem" $ do
+            it "Should work for single items" $ do
+                render (Item "Maybe")
+                    `shouldBe` "Maybe"
+            it "Should work for sub importing" $ do
+                render (ItemExposing "Maybe" ["Just", "Nothing"])
+                    `shouldBe` "Maybe(Just, Nothing)"
+            it "Should working for sub importing everything" $ do
+                render (ItemEvery "Maybe")
+                    `shouldBe` "Maybe(..)"
+        describe "ImportType" $ do
+            it "Should properly select everything" $ do
+                render (Everything) `shouldBe` "(..)"
+            it "Should properly select only types" $ do
+                render (Select []) `shouldBe` "()"
+            it "Should properly select items" $ do
+                render (Select [Item "Just", Item "withDefault"])
+                    `shouldBe` "(Just, withDefault)"
+                render (Select [ItemEvery "Just", Item "withDefault"])
+                    `shouldBe` "(Just(..), withDefault)"
+        describe "Import" $ do
+            it "Should import stuff" $ do
+                render (Import "List" Nothing Nothing)
+                    `shouldBe` "import List"
+            it "Should render with an alias" $ do
+                render (Import "Maybe" (Just "M") Nothing)
+                    `shouldBe` "import Maybe as M"
+            it "Should expose from the imports" $ do
+                render (Import "Maybe" Nothing $ Just $ Select [Item "withDefault"])
+                    `shouldBe` "import Maybe exposing (withDefault)"
+        describe "Dec" $ do
+            it "Should work for simple delcerations" $ do
+                let
+                    ast =
+                        Dec "add5"
+                            (TApp ["Int", "Int"])
+                            [Var "x"]
+                            (Op "+" (Var "x") (Int 5))
+                file <- readFile "test/spec/dec1.txt"
+                render ast ++ "\n" `shouldBe` file
+            it "Should work for more complex declerations" $ do
+                let
+                    ast =
+                        Dec "withDefault"
+                            (TApp ["a", Params "Maybe" ["a"], "a"])
+                            ["default", "m"]
+                            (Case "m"
+                                [ (App ["Just", "x"], "x")
+                                , ("Nothing", "default")
+                                ])
+                file <- readFile "test/spec/dec2.txt"
+                render ast ++ "\n" `shouldBe` file
+            it "Should properly handle type declerations" $ do
+                -- \_(*_*)_/
+                let
+                    ast =
+                        DecType "Maybe"
+                        ["a"]
+                        [ ("Nothing", [])
+                        , ("Just", ["a"])
+                        ]
+                file <- readFile "test/spec/dec3.txt"
+                render ast ++ "\n" `shouldBe` file
+            it "Should properly handle type aliases" $ do
+                let
+                    ast =
+                        DecTypeAlias "Model" ["a"] (Params "Maybe" ["a"])
+                file <- readFile "test/spec/dec4.txt"
+                render ast ++ "\n" `shouldBe` file
+    describe "Program" $ do
+        it "Should work" $ do
+            let
+                ast =
+                    Program "Maybe"
+                        (Select
+                            [ ItemExposing "Maybe" ["Just", "Nothing"]
+                            , Item "andThen"
+                            , Item "map"
+                            , Item "map2"
+                            , Item "map3"
+                            , Item "map4"
+                            , Item "map5"
+                            , Item "withDefault"
+                            ])
+                        []
+                        [ DecType "Maybe" ["a"]
+                            [ ("Nothing", [])
+                            , ("Just", ["a"])
+                            ]
+                        , Dec "withDefault"
+                            (TApp ["a", Params "Maybe" ["a"], "a"])
+                            ["default", "maybe"]
+                            (Case "maybe"
+                                [ (App ["Just", "value"], "value")
+                                , ("Nothing", "default")
+                                ])
+                        , Dec "map"
+                            (TApp [TApp ["a", "b"], Params "Maybe" ["a"], Params "Maybe" ["b"]])
+                            ["f", "maybe"]
+                            (Case "maybe"
+                                [ (App ["Just", "value"], App ["Just", App ["f", "value"]])
+                                , ("Nothing", "Nothing")
+                                ])
+                        , Dec "map2"
+                            (TApp
+                                [ TApp ["a", "b", "value"]
+                                , Params "Maybe" ["a"]
+                                , Params "Maybe" ["b"]
+                                , Params "Maybe" ["value"]
+                                ])
+                            ["func", "ma", "mb"]
+                            (Case (Tuple ["ma", "mb"])
+                                [ (Tuple [App ["Just", "a"], App ["Just", "b"]],
+                                    App ["Just", App ["func", "a", "b"]])
+                                , (Under, "Nothing")
+                                ])
+                        , Dec "map3"
+                            (TApp
+                                [ TApp ["a", "b", "c", "value"]
+                                , Params "Maybe" ["a"]
+                                , Params "Maybe" ["b"]
+                                , Params "Maybe" ["c"]
+                                , Params "Maybe" ["value"]
+                                ])
+                            ["func", "ma", "mb", "mc"]
+                            (Case (Tuple ["ma", "mb", "mc"])
+                                [ (Tuple
+                                    [ App ["Just", "a"]
+                                    , App ["Just", "b"]
+                                    , App ["Just", "c"]
+                                    ],
+                                    App ["Just", App ["func", "a", "b", "c"]])
+                                , (Under, "Nothing")
+                                ])
+                        ]
+            file <- readFile "test/program1.elm"
+            let (str, err) = renderProgram ast
+            err `shouldBe` WarningList []
+            str `shouldBe` file

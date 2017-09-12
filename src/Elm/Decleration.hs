@@ -1,8 +1,12 @@
 {-# OPTIONS_HADDOCK prune #-}
+{-# OPTIONS_GHC -Wall -Werror #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE Safe              #-}
 
 -- | Top level declerations
 module Elm.Decleration where
 
+import           Elm.Classes
 import           Elm.Expression
 import           Elm.Type
 import           Text.PrettyPrint
@@ -16,24 +20,25 @@ data Dec
     -- | Declare a type alias
     | DecTypeAlias String [String] TypeDec
 
-toDoc = undefined
-toDocT = undefined
-vopParam = undefined
+instance Generate Dec where
+    generate dec =
+        case dec of
+             Dec name type_ params value -> do
+                typeDoc <- generate type_
+                paramDocs <- mapM generate params
+                valueDoc <- generate value
+                return $ text name <+> ":" <+> typeDoc $+$ text name <+> hsep paramDocs <+> "=" $+$ nest 4 valueDoc
 
-toDocD :: Dec -> Doc
-toDocD dec =
-    case dec of
-        Dec str typeDec args body ->
-               text str <+> text ":" <+> toDocT typeDec $+$
-               hang (text str <+> (hsep . map toDoc $ args) <+> text "=") 4 (toDoc body)
+             DecType name params instances -> do
+                let (keys, values) = unzip instances
+                let keyDocs = map text keys
+                valueDocs <- mapM (mapM generate) values
+                let instanceDocs = map (\(key, values') -> key <+> hsep values') $ zip keyDocs valueDocs
+                let paramDocs = map text params
+                return $ "type" <+> text name <+> hsep paramDocs $+$
+                    (nest 4 $  "=" <+> head instanceDocs $+$ (vcat . map ((<+>)"|") . tail $ instanceDocs))
 
-        DecTypeAlias str typeParams t->
-            text "type alias" <+> text str <+> (hsep . map text $ typeParams) <+> text "=" <+> toDocT t
-
-        DecType str typeParams types ->
-            text "type" <+> text str <+> (hsep . map text $ typeParams) <+> text "=" <+>
-                (hsep . punctuate (text " |") . map toDec $ types)
-
-            where
-                toDec (str, t) =
-                    text str <+> (hsep . map vopParam $ t)
+             DecTypeAlias name params type_ -> do
+                typeDoc <- generate type_
+                let paramDocs = map text params
+                return $ "type alias" <+> text name <+> hsep paramDocs <+> "=" $+$ nest 4 typeDoc

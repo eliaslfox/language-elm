@@ -1,78 +1,72 @@
 {-# OPTIONS_HADDOCK prune #-}
-{-# LANGUAGE Safe #-}
+{-# OPTIONS_GHC -Wall -Werror #-}
+{-# LANGUAGE NoImplicitPrelude #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE Safe              #-}
 
 -- | Ast for expressing imports
 module Elm.Import where
 
-import Text.PrettyPrint
-import Elm.Classes
+import           Protolude        hiding (empty, (<>))
+
+import           Control.Monad    (mapM)
+import           Data.Maybe
+import           Data.String
+import           Elm.Classes
+import           Text.PrettyPrint
 
 -- | Possible ways to expose an import
 data ImportType
     = Everything
     | Select [ImportItem]
-    | ExposeNothing
-
-instance HasEvery ImportType where
-    every = Everything
 
 -- | Possible ways to expose a sub import
-data ImportItem 
+data ImportItem
     = Item String
     | ItemExposing String [String]
     | ItemEvery String
 
-instance Select ImportItem where
-    select = Item
-
-instance SubSelect ImportItem where
-    subSelect = ItemExposing
-
 -- | A full import
-data Import = Import String (Maybe String) ImportType
+data Import = Import String (Maybe String) (Maybe ImportType)
 
-instance Select Import where
-    select module_ = Import module_ Nothing ExposeNothing
+instance Generate ImportItem where
+    generate item =
+        case item of
+            Item str ->
+                return . text $ str
 
-instance SubSelect Import where
-    subSelect module_ items = Import module_ Nothing $ Select $ map Item items
+            ItemExposing str [] ->
+                return $ text str <> "()"
 
-docItem :: ImportItem -> Doc
-docItem item =
-    case item of
-        Item str ->
-            text str
+            ItemExposing str exposedItems ->
+                return $ text str <> (parens . hsep . punctuate "," . map text $ exposedItems)
 
-        ItemExposing name exposes ->
-            text name <> (parens . hsep . punctuate (text ",") . map text $ exposes)
+            ItemEvery str ->
+                return $ text str <> "(..)"
 
-        ItemEvery name ->
-            text name <> text "(..)"
+instance Generate ImportType where
+    generate item =
+        case item of
+            Everything ->
+                return "(..)"
 
-exposingDoc :: ImportType -> Doc
-exposingDoc importType =
-    case importType of
-        Everything ->
-            text "exposing (..)"
+            Select [] -> do
+                return "()"
 
-        ExposeNothing ->
-            empty
+            Select items -> do
+               docItems <- mapM generate items
+               return $ parens . hsep . punctuate "," $ docItems
 
-        Select imports ->
-            text "exposing" <+> (parens . hsep . punctuate (text ",") . map docItem $ imports)
 
-toDocI :: Import -> Doc
-toDocI (Import name as exposing) =
-    text "import" <+> text name <+> asDoc <+> exposingDoc exposing
-
-    where
-        asDoc =
-            case as of
+instance Generate Import where
+    generate (Import name as exposing) = do
+        let asDoc = Data.Maybe.fromMaybe empty $ fmap (\str -> "as" <+> text str) $ as
+        exposingDoc <-
+            case exposing of
                 Nothing ->
-                    empty
+                    return empty
 
-                Just str ->
-                    text "as" <+> text str
-            
-                
-
+                Just e -> do
+                    docE <- generate e
+                    return $ "exposing" <+> docE
+        return $ "import" <+> text name <+> asDoc <+> exposingDoc

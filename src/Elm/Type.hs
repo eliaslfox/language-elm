@@ -7,6 +7,7 @@ module Elm.Type where
 import           Control.Monad.Writer (tell)
 import           Data.List            (intersperse)
 import           Data.Maybe
+import           Data.String
 import           Elm.Classes
 import           Elm.Expression
 import           Elm.ParseError
@@ -23,8 +24,8 @@ data TypeDec
     -- | A record type
     | TRecord (Maybe String) [(String, TypeDec)]
 
-instance Var TypeDec where
-    var name = Params name []
+instance IsString TypeDec where
+    fromString x = Params x []
 
 instance Generate TypeDec where
     generate typeDec =

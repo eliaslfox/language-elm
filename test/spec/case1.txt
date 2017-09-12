@@ -1,5 +1,6 @@
 case m of
     Just x ->
         x
+
     Nothing ->
         0

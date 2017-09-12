@@ -1,20 +1,22 @@
 {-# OPTIONS_HADDOCK prune #-}
-{-# LANGUAGE OverloadedLists   #-}
+{-# OPTIONS_GHC -Werror -Wall #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE Trustworthy       #-}
-{-# LANGUAGE TypeFamilies      #-}
+{-# LANGUAGE Safe              #-}
 
 -- | Used to declare expressions
 module Elm.Expression
     ( Expr(..)
     ) where
 
+import           Protolude
+
 import           Control.Monad        (mapM, when)
 import           Control.Monad.Writer (tell)
-import           Data.String          (IsString (..))
+import           Data.List            hiding (map)
+import           Data.String          (IsString (..), String)
 import           Elm.Classes          (Generate (..))
 import           Elm.ParseError       (GenError (..))
-import           GHC.Exts             (IsList (..))
 import           Text.PrettyPrint     hiding (Str)
 
 -- | The expression type
@@ -68,12 +70,6 @@ data Expr {-
 instance IsString Expr where
     fromString = Var
 
--- | Allows creating lists with overloaded lists
-instance IsList Expr where
-    type Item Expr = Expr
-    fromList = List
-    toList = error "toList is not defined on expressions"
-
 instance Generate Expr where
     generate expr =
         case expr of
@@ -92,6 +88,8 @@ instance Generate Expr where
              -> do
                 docs <- mapM vop exprs
                 return . hsep $ docs
+            Tuple [] ->
+                return "()"
             Tuple items -> do
                 when (length items > 9) $
                     tell $ Error "Length of tuple is too long"
@@ -101,7 +99,7 @@ instance Generate Expr where
                         [ "Tuples of length longer than seven are not comparable"
                         ]
                 docs <- mapM generate items
-                return . parens . hsep . punctuate "," $ docs
+                return $ lparen <+> (hsep . punctuate "," $ docs) <+> rparen
             Str str -> return . doubleQuotes . text $ str
             Op op expr1 expr2 -> do
                 doc1 <- vop expr1
@@ -145,8 +143,8 @@ instance Generate Expr where
                         ]
                 return . float $ val
             Under -> return . char $ '_'
-            Bool bool ->
-                if bool
+            Bool bool' ->
+                if bool'
                     then return . text $ "True"
                     else return . text $ "False"
             Record Nothing [] -> return "{}"
@@ -160,8 +158,8 @@ instance Generate Expr where
                         ]
                 return . text $ str
             Record (Just (Var str)) updates -> do
-                list <- genRecordList updates
-                return $ lbrace <+> text str <+> "|" <+> list <+> rbrace
+                list' <- genRecordList updates
+                return $ lbrace <+> text str <+> "|" <+> list' <+> rbrace
             Record (Just _) _
             -- This seems to be how it is
              -> do
@@ -170,8 +168,8 @@ instance Generate Expr where
                         "You are unable to update a record with a non constant"
                 return ""
             Record Nothing updates -> do
-                list <- genRecordList updates
-                return $ lbrace <+> list <+> rbrace
+                list' <- genRecordList updates
+                return $ lbrace <+> list' <+> rbrace
             Parens expr' -> do
                 doc <- generate expr'
                 return . parens $ doc
@@ -195,7 +193,7 @@ instance Generate Expr where
             let (keys, values) = unzip options
             docKeys <- mapM generate keys
             docValues <- sequence . map generate $ values
-            return . vcat . map (\(a, b) -> a <+> "->" $+$ nest 4 b) $
+            return . vcat . punctuate "\n" . map (\(a, b) -> a <+> "->" $+$ nest 4 b) $
                 zip docKeys docValues
             -- takes an expression and wraps it in parens
             -- if required for nesting it in another expression
