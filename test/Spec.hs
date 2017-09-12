@@ -4,8 +4,8 @@ import           Control.Monad.Writer
 import           Elm.Classes
 import           Elm.Decleration
 import           Elm.Expression
+import           Elm.GenError
 import           Elm.Import
-import           Elm.ParseError
 import           Elm.Program
 import           Elm.Type
 import           Renderer

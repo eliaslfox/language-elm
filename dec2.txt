@@ -1,7 +1,0 @@
-withDefault : a -> Maybe a -> a
-withDefault default m =
-    case m of
-        Just x ->
-            x
-        Nothing ->
-            default

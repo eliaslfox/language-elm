@@ -3,7 +3,7 @@ module Renderer where
 import           Control.Monad.Writer
 import           Elm.Classes
 import           Elm.Expression
-import           Elm.ParseError
+import           Elm.GenError
 import           Text.PrettyPrint
 
 renderExpr :: Expr -> String

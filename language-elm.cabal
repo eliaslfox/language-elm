@@ -1,5 +1,5 @@
 name:               language-elm
-version:            0.0.10.1
+version:            0.1.0.0
 synopsis:           Generate elm code
 description:        Generate elm code from an ast
 homepage:           https://github.com/eliaslfox/language-elm#readme
@@ -15,12 +15,12 @@ cabal-version:      >=1.10
 
 library
   hs-source-dirs:   src
-  exposed-modules:    Elm.Decleration, Elm.Expression, Elm.Import, Elm.Program, Elm.Type, Elm.Classes, Elm.ParseError
-  build-depends:    base >= 4.7 && < 5, 
-                       pretty,
-                       MissingH,
-                       mtl,
-                       protolude
+  exposed-modules:  Elm.Decleration, Elm.Expression, Elm.Import, Elm.Program, Elm.Type, Elm.Classes, Elm.GenError
+  build-depends:    base >= 4.9.1 && < 4.10, 
+                       pretty >= 1.1.3 && < 1.2,
+                       MissingH >= 1.4.0 && < 1.5,
+                       mtl >= 2.2.1 && < 2.3,
+                       protolude >= 0.2 && < 0.3
   default-language: Haskell2010
 
 test-suite language-elm-test
@@ -30,11 +30,10 @@ test-suite language-elm-test
   other-modules:    Renderer
   build-depends:    base
                      , language-elm
-                     , HUnit
-                     , pretty
-                     , hspec
-                     , mtl
-                     , protolude
+                     , pretty >= 1.1.3 && < 1.2
+                     , hspec >= 2.4.4 && < 2.5
+                     , mtl >= 2.2.1 && < 2.3
+                     , protolude >= 0.2 && < 0.3
   ghc-options:      -threaded -rtsopts -with-rtsopts=-N
   default-language: Haskell2010
 

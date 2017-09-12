@@ -10,7 +10,7 @@ import           Data.Maybe
 import           Data.String
 import           Elm.Classes
 import           Elm.Expression
-import           Elm.ParseError
+import           Elm.GenError
 import           Text.PrettyPrint
 
 -- | Data type to represent types

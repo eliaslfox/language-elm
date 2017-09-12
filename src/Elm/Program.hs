@@ -15,8 +15,8 @@ import           Data.String
 import           Data.String.Utils
 import           Elm.Classes
 import           Elm.Decleration
+import           Elm.GenError
 import           Elm.Import
-import           Elm.ParseError
 import           Text.PrettyPrint
 
 -- | Program type

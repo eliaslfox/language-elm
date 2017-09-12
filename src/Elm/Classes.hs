@@ -9,7 +9,7 @@ module Elm.Classes where
 import           Protolude            ()
 
 import           Control.Monad.Writer
-import           Elm.ParseError
+import           Elm.GenError
 import           Text.PrettyPrint
 
 class Generate a where

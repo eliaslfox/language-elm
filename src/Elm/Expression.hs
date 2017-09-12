@@ -13,10 +13,9 @@ import           Protolude
 
 import           Control.Monad        (mapM, when)
 import           Control.Monad.Writer (tell)
-import           Data.List            hiding (map)
 import           Data.String          (IsString (..), String)
 import           Elm.Classes          (Generate (..))
-import           Elm.ParseError       (GenError (..))
+import           Elm.GenError         (GenError (..))
 import           Text.PrettyPrint     hiding (Str)
 
 -- | The expression type

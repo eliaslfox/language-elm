@@ -4,7 +4,7 @@
 {-# LANGUAGE Safe              #-}
 {-# LANGUAGE Strict            #-}
 
-module Elm.ParseError where
+module Elm.GenError where
 
 import           Protolude
 
