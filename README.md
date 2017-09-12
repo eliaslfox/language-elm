@@ -7,6 +7,10 @@ Install language-elm from stack
 stack install language-elm
 ```
 
+## Documentation
+[Documentation](https://hackage.haskell.org/package/language-elm)
+
+<!--
 Import the libraries
 ```haskell
 import Elm.Decleration
@@ -85,3 +89,4 @@ mapSecond :: (a -> b) -> ((a1, a)) -> ((a1, b))
 mapSecond func (x, y) = (x, func y)
 ```
 
+-->
