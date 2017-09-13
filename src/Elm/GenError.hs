@@ -1,15 +1,15 @@
-{-# OPTIONS_HADDOCK prune #-}
 {-# OPTIONS_GHC -Wall -Werror #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE Safe              #-}
 {-# LANGUAGE Strict            #-}
 
-module Elm.GenError where
+module Elm.GenError (GenError(..)) where
 
 import           Protolude
 
 import           Data.String
 
+-- | The error type
 data GenError
     = WarningList [String]
     | Error String

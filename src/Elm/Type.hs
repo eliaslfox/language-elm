@@ -2,7 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 -- | Ast for declaring types
-module Elm.Type where
+module Elm.Type (TypeDec(..)) where
 
 import           Control.Monad.Writer (tell)
 import           Data.List            (intersperse)

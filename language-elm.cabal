@@ -1,5 +1,5 @@
 name:               language-elm
-version:            0.1.0.0
+version:            0.1.0.1
 synopsis:           Generate elm code
 description:        Generate elm code from an ast
 homepage:           https://github.com/eliaslfox/language-elm#readme
@@ -15,7 +15,7 @@ cabal-version:      >=1.10
 
 library
   hs-source-dirs:   src
-  exposed-modules:  Elm.Decleration, Elm.Expression, Elm.Import, Elm.Program, Elm.Type, Elm.Classes, Elm.GenError
+  exposed-modules:  Elm, Elm.Decleration, Elm.Expression, Elm.Import, Elm.Program, Elm.Type, Elm.Classes, Elm.GenError
   build-depends:    base >= 4.9.1 && < 4.10, 
                        pretty >= 1.1.3 && < 1.2,
                        MissingH >= 1.4.0 && < 1.5,
