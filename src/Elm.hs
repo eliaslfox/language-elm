@@ -2,7 +2,6 @@
 {-# OPTIONS_GHC -Wall -Werror #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE Trustworthy       #-}
-
 module Elm
     (
     -- * Expressions
@@ -51,19 +50,25 @@ module Elm
     -- * Generation
     , renderModule
     , render
+    , genStr
     )
     where
 
-import           Prelude         (error)
-import           Protolude       hiding (bool, list)
+-- Please note that doctest is very specefic about spacing
+-- so chaning spacing in the examples may break tests
+import           Prelude              (error)
+import           Protolude            hiding (bool, list)
 
+import           Control.Monad.Writer
 import           Data.String
+import           Elm.Classes
 import qualified Elm.Decleration
 import qualified Elm.Expression
-import           Elm.GenError    (GenError (WarningList))
+import           Elm.GenError         (GenError (WarningList))
 import qualified Elm.Import
 import qualified Elm.Program
-import qualified Elm.Type        (TypeDec (..))
+import qualified Elm.Type             (TypeDec (..))
+import qualified Text.PrettyPrint
 
 type Expr = Elm.Expression.Expr
 type Type = Elm.Type.TypeDec
@@ -99,7 +104,7 @@ var = Elm.Expression.Var
 
 -- | Function application
 --
--- >>> render (app [var "a", var "b", var "c"])
+-- >>> genStr (app [var "a", var "b", var "c"])
 -- "a b c"
 app :: [Expr] -> Expr
 app = Elm.Expression.App
@@ -110,30 +115,36 @@ list = Elm.Expression.List
 
 -- | Apply an operator to two sub expressions
 --
--- >>> render (Op "+" (Int 5) (Int 6))
+-- >>> genStr (op "+" (int 5) (int 6))
 -- "5 + 6"
 op :: String -> Expr -> Expr -> Expr
 op = Elm.Expression.Op
 
 -- | A let...in block
 --
--- >>> render (let_ (var "a") [(var "a", Int 5)])
--- "let
---      a = 5
---  in
---      a"
+-- >>> putStrLn $ genStr (let_ (var "a") [(var "a", int 5)])
+-- let
+--     a = 5
+-- in
+--     a
 let_ :: Expr -> [(Expr, Expr)] -> Expr
 let_ = Elm.Expression.Let
 
 -- | A case...of block
 --
--- >>> render (case_ (var "m") [(App [var "Just", var "x"], var "x"), (var "Nothing", var "default")]
--- "case m of
---      Just x ->
---          x
+-- >>> :{
+--  putStrLn $ genStr
+--      (case_ (var "m")
+--          [ (app [var "Just", var "x"], var "x")
+--          , (var "Nothing", var "default")
+--          ])
+-- :}
+-- case m of
+--     Just x ->
+--         x
 -- <BLANKLINE>
---      Nothing ->
---          default"
+--     Nothing ->
+--         default
 case_ :: Expr -> [(Expr, Expr)] -> Expr
 case_ = Elm.Expression.Case
 
@@ -147,10 +158,10 @@ parens = Elm.Expression.Parens
 
 -- | A type or type variable
 --
--- >>> render (tvar "Nothing")
+-- >>> genStr (tvar "Nothing")
 -- "Nothing"
 --
--- >>> render (tvar "a")
+-- >>> genStr (tvar "a")
 -- "a"
 --
 tvar :: String -> Type
@@ -158,7 +169,7 @@ tvar name = Elm.Type.Params name []
 
 -- | A type with a single paramater
 --
--- >>> render (tparam "Just" (tvar "a"))
+-- >>> genStr (tparam "Just" (tvar "a"))
 -- "Just a"
 --
 tparam :: String -> Type -> Type
@@ -166,7 +177,7 @@ tparam name type_ = Elm.Type.Params name [type_]
 
 -- | A type with multiple paramaters
 --
--- >>> render (tparams "Result" [tvar "String", tvar "Int"])
+-- >>> genStr (tparams "Result" [tvar "String", tvar "Int"])
 -- "Result String Int"
 --
 tparams :: String -> [Type] -> Type
@@ -174,7 +185,7 @@ tparams = Elm.Type.Params
 
 -- | A zero item tuple type
 --
--- >>> render tunit
+-- >>> genStr tunit
 -- "()"
 --
 tunit :: Type
@@ -182,16 +193,16 @@ tunit = Elm.Type.TTuple []
 
 -- | A multiple item tuple
 --
--- >>> render (ttuple [tvar "a", tvar "b"])
--- "( a, b )"
+-- >>> genStr (ttuple [tvar "a", tvar "b"])
+-- "(a, b)"
 --
 ttuple :: [Type] -> Type
 ttuple = Elm.Type.TTuple
 
 -- | Type application
 --
--- >>> render (tapp [tvar "a", tvar "b", tvar "c"])
--- "[a, b, c]"
+-- >>> genStr (tapp [tvar "a", tvar "b", tvar "c"])
+-- "a -> b -> c"
 --
 tapp :: [Type] -> Type
 tapp = Elm.Type.TApp
@@ -199,7 +210,7 @@ tapp = Elm.Type.TApp
 
 -- | A record type
 --
--- >>> render (trecord [("a", tvar "Int"), ("b", tvar "String")]
+-- >>> genStr (trecord [("a", tvar "Int"), ("b", tvar "String")])
 -- "{ a : Int, b : String }"
 --
 trecord :: [(String, Type)] -> Type
@@ -207,7 +218,7 @@ trecord = Elm.Type.TRecord Nothing
 
 -- | A paramaterized record type
 --
--- >>> render (trecord "a" [("b", tvar "Int")])
+-- >>> genStr (trecordParam "a" [("b", tvar "Int")])
 -- "{ a | b : Int }"
 --
 trecordParam :: String -> [(String, Type)] -> Type
@@ -291,5 +302,16 @@ render module' =
     in
         if err == WarningList [] then
             str
+        else
+            error . show $ err
+
+
+genStr :: (Generate a) => a -> String
+genStr g =
+    let
+        (str, err) = runWriter . generate $ g
+    in
+        if err == WarningList [] then
+            Text.PrettyPrint.render str
         else
             error . show $ err
