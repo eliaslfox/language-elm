@@ -1,5 +1,5 @@
 {-# OPTIONS_HADDOCK prune #-}
-{-# OPTIONS_GHC -Wall -Werror #-}
+{-# OPTIONS_GHC -Wall #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE Trustworthy       #-}
 module Elm
@@ -56,8 +56,7 @@ module Elm
 
 -- Please note that doctest is very specefic about spacing
 -- so chaning spacing in the examples may break tests
-import           Prelude              (error)
-import           Protolude            hiding (bool, list)
+import           Protolude            hiding (Type, bool, list)
 
 import           Control.Monad.Writer
 import           Data.String
