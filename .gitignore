@@ -2,3 +2,5 @@
 *.swp
 dist/
 *.swo
+language-elm.cabal
+
