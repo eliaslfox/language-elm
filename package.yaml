@@ -14,6 +14,7 @@ dependencies:
 - pretty
 - mtl
 - protolude
+- base >= 4.11 && <= 4.12
 build-tools:
 - doctest
 library:
@@ -28,7 +29,6 @@ library:
   - Elm.Classes
   - Elm.GenError
   dependencies:
-  - base
   - MissingH
 tests:
   language-elm-test:
@@ -39,6 +39,5 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - base
     - language-elm
     - hspec
