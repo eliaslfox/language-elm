@@ -15,8 +15,10 @@ data GenError
     | Error String
     deriving (Eq, Show)
 
+instance Semigroup GenError where
+  (Error x) <> _ = Error x
+  _ <> (Error y) = Error y
+  (WarningList x) <> (WarningList y) = WarningList $ x <> y
+
 instance Monoid GenError where
-    mappend (Error str) _                   = Error str
-    mappend _ (Error str)                   = Error str
-    mappend (WarningList a) (WarningList b) = WarningList $ a ++ b
     mempty = WarningList []

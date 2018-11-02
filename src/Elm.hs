@@ -68,6 +68,7 @@ import qualified Elm.Import
 import qualified Elm.Program
 import qualified Elm.Type             (TypeDec (..))
 import qualified Text.PrettyPrint
+import Prelude (error)
 
 type Expr = Elm.Expression.Expr
 type Type = Elm.Type.TypeDec
