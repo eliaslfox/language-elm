@@ -4,7 +4,7 @@ synopsis: Generate elm code
 description: Generate elm code from an ast
 category: Web
 author: Elias Lawson-Fox
-maintainer: eliaslfox@gmail.com
+maintainer: me@eliaslfox.com
 copyright: 2017 Elias Lawson-Fox
 license: BSD3
 github: eliaslfox/language-elm
@@ -41,3 +41,6 @@ tests:
     dependencies:
     - language-elm
     - hspec
+data-files:
+- test/program1.elm
+- test/spec/*
