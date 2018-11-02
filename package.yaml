@@ -1,5 +1,5 @@
 name: language-elm
-version: '0.1.0.2'
+version: '0.1.1.0'
 synopsis: Generate elm code
 description: Generate elm code from an ast
 category: Web
@@ -14,12 +14,14 @@ dependencies:
 - pretty
 - mtl
 - protolude
+build-tools:
+- doctest
 library:
   source-dirs: src
   exposed-modules:
   - Elm
   - Elm.Decleration
-  - Elm.Expression
+  - Elm.Expression 
   - Elm.Import
   - Elm.Program
   - Elm.Type
