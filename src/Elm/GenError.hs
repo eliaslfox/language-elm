@@ -9,7 +9,7 @@ import           Protolude hiding ((<>))
 
 import           Data.String
 
-import Data.Semigroup ((<>))
+import Data.Semigroup (Semigroup, (<>))
 
 -- | The error type
 data GenError
