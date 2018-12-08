@@ -5,9 +5,11 @@
 
 module Elm.GenError (GenError(..)) where
 
-import           Protolude
+import           Protolude hiding ((<>))
 
 import           Data.String
+
+import Data.Semigroup ((<>))
 
 -- | The error type
 data GenError
@@ -22,3 +24,4 @@ instance Semigroup GenError where
 
 instance Monoid GenError where
     mempty = WarningList []
+    mappend = (<>)
