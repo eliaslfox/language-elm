@@ -3,7 +3,7 @@ language: haskell
 before_install:
   - cabal install doctest
   - cabal install hpack
-  - hpack
+  - cabal exec hpack
 
 script:
     - cabal configure --enable-tests 
