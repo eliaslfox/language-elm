@@ -1,11 +1,17 @@
-{-# OPTIONS_HADDOCK prune #-}
-{-# OPTIONS_GHC -Wall -Werror #-}
+{-# OPTIONS_HADDOCK prune      #-}
+{-# OPTIONS_GHC -Wall -Werror  #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE Safe              #-}
 
 -- | Top level declerations
 module Elm.Declaration where
 
+import           Protolude
+
+import           Data.String (String)
+import           Data.Maybe (fromJust)
+import           Data.List (tail)
 import           Elm.Classes
 import           Elm.Expression
 import           Elm.Type
@@ -36,7 +42,7 @@ instance Generate Dec where
                 let instanceDocs = map (\(key, values') -> key <+> hsep values') $ zip keyDocs valueDocs
                 let paramDocs = map text params
                 return $ "type" <+> text name <+> hsep paramDocs $+$
-                    (nest 4 $  "=" <+> head instanceDocs $+$ (vcat . map ((<+>)"|") . tail $ instanceDocs))
+                    (nest 4 $  "=" <+> (fromJust $ head instanceDocs) $+$ (vcat . map ((<+>)"|") . tail $ instanceDocs))
 
              DecTypeAlias name params type_ -> do
                 typeDoc <- generate type_
