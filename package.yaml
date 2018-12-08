@@ -10,6 +10,10 @@ license: BSD3
 github: eliaslfox/language-elm
 extra-source-files:
 - README.md
+ghc-options:
+- -Wwarn=unused-imports
+- -Wall
+- -Wimplicit-prelude
 dependencies:
 - pretty
 - mtl
