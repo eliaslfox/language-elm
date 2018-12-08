@@ -15,8 +15,6 @@ dependencies:
 - mtl
 - protolude
 - base >= 4.9 && < 4.13
-build-tools:
-- doctest
 library:
   source-dirs: src
   exposed-modules:

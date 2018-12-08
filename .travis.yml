@@ -3,6 +3,13 @@ language: haskell
 before_install:
   - curl -sSL https://github.com/sol/hpack/raw/master/get-hpack.sh | bash
   - hpack
+  - cabal install doctest
+
+script:
+    - cabal configure --enable-tests 
+    - cabal build 
+    - cabal test
+    - doctest src/*
 
 ghc:
   - "8.6"
