@@ -1,7 +1,7 @@
-{-# OPTIONS_GHC -Wall -Werror #-}
+{-# OPTIONS_GHC -Wall -Werror  #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE Safe              #-}
-{-# LANGUAGE Strict            #-}
+{-# LANGUAGE CPP               #-}
 
 module Elm.GenError (GenError(..)) where
 
