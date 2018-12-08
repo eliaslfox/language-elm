@@ -2,14 +2,14 @@ language: haskell
 
 before_install:
   - cabal install doctest
-  - curl -sSL https://github.com/sol/hpack/raw/master/get-hpack.sh | bash
+  - cabal install hpack
   - hpack
 
 script:
     - cabal configure --enable-tests 
     - cabal build 
     - cabal test
-    - doctest src/*
+    - cabal exec doctest -- src/*
 
 ghc:
   - "8.6"
