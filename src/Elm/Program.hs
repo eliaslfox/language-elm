@@ -14,7 +14,7 @@ import           Data.List            hiding (map)
 import           Data.String
 import           Data.String.Utils
 import           Elm.Classes
-import           Elm.Decleration
+import           Elm.Declaration
 import           Elm.GenError
 import           Elm.Import
 import           Text.PrettyPrint
