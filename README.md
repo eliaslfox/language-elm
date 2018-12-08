@@ -8,5 +8,5 @@ stack install language-elm
 ```
 
 ## Documentation
-[Documentation](https://hackage.haskell.org/package/language-elm)
+[Documentation](https://hackage.haskell.org/package/language-elm-0.2.0.0/docs/Elm.html)
 
