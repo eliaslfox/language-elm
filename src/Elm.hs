@@ -28,7 +28,7 @@ module Elm
     , ttuple
     , trecord
     , trecordParam
-    -- * Declerations
+    -- * Declarations
     , Dec
     , decVariable
     , decFunction
@@ -61,7 +61,7 @@ import           Protolude            hiding (Type, bool, list)
 import           Control.Monad.Writer
 import           Data.String
 import           Elm.Classes
-import qualified Elm.Decleration
+import qualified Elm.Declaration
 import qualified Elm.Expression
 import           Elm.GenError         (GenError (WarningList))
 import qualified Elm.Import
@@ -72,7 +72,7 @@ import Prelude (error)
 
 type Expr = Elm.Expression.Expr
 type Type = Elm.Type.TypeDec
-type Dec = Elm.Decleration.Dec
+type Dec = Elm.Declaration.Dec
 type Import = Elm.Import.Import
 type ImportExpr = Elm.Import.ImportType
 type ImportItem = Elm.Import.ImportItem
@@ -231,7 +231,7 @@ decVariable :: String -- ^ The variable name
     -> Type -- ^ The variable's type
     -> Expr -- ^ The variable's value
     -> Dec
-decVariable name type_ expr = Elm.Decleration.Dec  name type_ [] expr
+decVariable name type_ expr = Elm.Declaration.Dec  name type_ [] expr
 
 -- | Declare a function
 decFunction :: String  -- ^ The function name
@@ -239,21 +239,21 @@ decFunction :: String  -- ^ The function name
     -> [Expr] -- ^ The fuction's paramaters
     -> Expr  -- ^ The function's value
     -> Dec
-decFunction = Elm.Decleration.Dec
+decFunction = Elm.Declaration.Dec
 
 -- | Declare a type
 decType :: String -- ^ The type name
     -> [String] -- ^ The type's type paramaters
     -> [(String, [Type])] -- ^ The type's constructors
     -> Dec
-decType = Elm.Decleration.DecType
+decType = Elm.Declaration.DecType
 
 -- | Declare a type alias
 decTypeAlias :: String  -- ^ The type alias' name
     -> [String]  -- ^ The type alias's type paramaters
     -> Type  -- ^ The type alias's type
     -> Dec
-decTypeAlias = Elm.Decleration.DecTypeAlias
+decTypeAlias = Elm.Declaration.DecTypeAlias
 
 -- | Import an item
 select :: String -> ImportItem

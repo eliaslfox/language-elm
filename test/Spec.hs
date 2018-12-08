@@ -2,7 +2,7 @@
 
 import           Control.Monad.Writer
 import           Elm.Classes
-import           Elm.Decleration
+import           Elm.Declaration
 import           Elm.Expression
 import           Elm.GenError
 import           Elm.Import

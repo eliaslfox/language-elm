@@ -4,7 +4,7 @@
 {-# LANGUAGE Safe              #-}
 
 -- | Top level declerations
-module Elm.Decleration where
+module Elm.Declaration where
 
 import           Elm.Classes
 import           Elm.Expression
