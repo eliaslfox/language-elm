@@ -1,5 +1,11 @@
 language: haskell
 
+before_install:
+  - curl -sSL https://github.com/sol/hpack/raw/master/get-hpack.sh | bash
+
+before_script:
+  - hpack
+
 ghc:
   - "8.6"
   - "8.4"
