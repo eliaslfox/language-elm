@@ -1,8 +1,11 @@
-{-# OPTIONS_HADDOCK prune #-}
+{-# OPTIONS_HADDOCK prune      #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 
 -- | Ast for declaring types
 module Elm.Type (TypeDec(..)) where
+
+import           Protolude
 
 import           Control.Monad.Writer (tell)
 import           Data.List            (intersperse)

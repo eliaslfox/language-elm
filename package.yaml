@@ -15,7 +15,7 @@ ghc-options:
 - -fwarn-implicit-prelude
 - -fwarn-unused-do-bind
 - -fwarn-tabs
-- -Wwarn
+- -fno-warn-unused-imports
 dependencies:
 - pretty
 - mtl
