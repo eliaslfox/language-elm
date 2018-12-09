@@ -12,11 +12,10 @@ extra-source-files:
 - README.md
 ghc-options:
 - -Wall
-- -fno-warn-unused-imports
-when:
-- condition: impl(ghc >= 8.0)
-  ghc-options:
-   - -Wwarn=unused-imports
+- -fwarn-implicit-prelude
+- -fwarn-unused-do-bind
+- -fwarn-tabs
+- -Wwarn
 dependencies:
 - pretty
 - mtl
