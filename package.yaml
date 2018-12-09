@@ -12,6 +12,7 @@ extra-source-files:
 - README.md
 ghc-options:
 - -Wall
+- -fno-warn-unused-imports
 when:
 - condition: impl(ghc >= 8.0)
   ghc-options:
